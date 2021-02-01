@@ -23,7 +23,7 @@ function initialState() {
   document.getElementById('george').setAttribute('src', "")
   document.getElementById('kramer').setAttribute('src', "")
 }
-initialState()
+
 
 
 
@@ -67,7 +67,6 @@ function getQuote() {
       console.log(quotes)
       let p = document.getElementById('quote')
       p.innerText = quotes.quote
-      // checkAnswer()
     })
     .catch((error) => {
       console.error("ERROR ".error)
@@ -80,37 +79,37 @@ function getQuote() {
  
 function checkAnswer() {
   if (answer === quotes.author.toLowerCase()) {
-    // youreRight()
-    console.log("RIGHT+++++++++++++++++++++++++++")
+    youreRight()
+    // console.log("RIGHT+++++++++++++++++++++++++++")
   } else {
-    // youreWrong()
-    console.log("WRONG+++++++++++++++++++++++++++++")
+    youreWrong()
+    // console.log("WRONG+++++++++++++++++++++++++++++")
   }
 }
 
 
-// function youreRight() {
-//   getQuote()
-// }
+function youreRight() {
+  getQuote()
+}
 
-// function youreWrong() {
-//   initialState()
-// }
-// getStarted()
+function youreWrong() {
+  initialState() 
+}
 
-// // darkmode functionality
-// document.addEventListener('DOMContentLoaded', function () {
-//   var checkbox = document.querySelector('input[type="checkbox"]');
+initialState()
 
-//   checkbox.addEventListener('change', function () {
-//     if (checkbox.checked) {
-//       document.querySelector('body').style.backgroundColor = "black";
-//       document.querySelector('p').style.color = "white";
-//     } else {
-//       // do that
-//       document.querySelector('body').style.backgroundColor = "rgb(49, 115, 193)";
-//       document.querySelector('p').style.color = "black";
-//     }
-//   });
-// });
+// darkmode functionality
+document.addEventListener('DOMContentLoaded', function () {
+  var checkbox = document.querySelector('input[type="checkbox"]');
 
+  checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+      document.querySelector('body').style.backgroundColor = "black";
+      document.querySelector('p').style.color = "white";
+    } else {
+      // do that
+      document.querySelector('body').style.backgroundColor = "rgb(49, 115, 193)";
+      document.querySelector('p').style.color = "black";
+    }
+  });
+});
