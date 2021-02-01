@@ -1,14 +1,32 @@
-let button = document.getElementById('start')
-button.addEventListener('click', () => {
-    let d = document.getElementById('directions')
-    d.innerText = ""
-    document.getElementById('jerry').setAttribute('src', jerryUrl)
-    document.getElementById('elaine').setAttribute('src', elaineUrl)
-    document.getElementById('george').setAttribute('src', georgeUrl)
-    document.getElementById('kramer').setAttribute('src', kramerUrl)
-    // make start button go away
-    getQuote()
-  })
+
+function initialState() {
+  let p = document.getElementById('quote')
+  p.innerText = ""
+  let b = document.getElementById('start')
+  b.style.display = 'flex'
+  let d = document.getElementById('directions')
+  d.innerText = "See if you can beat the high score. Press start now!"
+  document.getElementById('jerry').setAttribute('src', "")
+  document.getElementById('elaine').setAttribute('src', "")
+  document.getElementById('george').setAttribute('src', "")
+  document.getElementById('kramer').setAttribute('src', "")
+  getStarted()
+}
+
+function getStarted() {
+  let button = document.getElementById('start')
+  button.addEventListener('click', () => {
+      let b = document.getElementById('start')
+      b.style.display = 'none'
+      let d = document.getElementById('directions')
+      d.innerText = ""
+      document.getElementById('jerry').setAttribute('src', jerryUrl)
+      document.getElementById('elaine').setAttribute('src', elaineUrl)
+      document.getElementById('george').setAttribute('src', georgeUrl)
+      document.getElementById('kramer').setAttribute('src', kramerUrl)
+      getQuote()
+    })
+}
 
 function getQuote() {
   fetch('https://seinfeld-quotes.herokuapp.com/random') 
@@ -17,9 +35,10 @@ function getQuote() {
   })
   .then(function(json) {
     quotes = json
+    console.log
+    // quoteAuthor = JSON.stringify(quotes.author)
     let p = document.getElementById('quote')
     p.innerText = quotes.quote 
-    console.log(quotes)
     checkAnswer()
   }) 
   .catch((error) => {
@@ -42,8 +61,9 @@ function youreRight() {
 }
 
 function youreWrong () {
-  alert("You're wrong!")
+  initialState()
 }
+getStarted()
 
 // darkmode functionality
 document.addEventListener('DOMContentLoaded', function () {
