@@ -67,7 +67,7 @@ function getQuote() {
       console.log(quotes)
       let p = document.getElementById('quote')
       p.innerText = quotes.quote
-      checkAnswer()
+      // checkAnswer()
     })
     .catch((error) => {
       console.error("ERROR ".error)
