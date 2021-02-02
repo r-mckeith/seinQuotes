@@ -17,6 +17,9 @@ let kramer = document.getElementById('kramer')
 let p = document.getElementById('quote')
 let d = document.getElementById('directions')
 let s = document.getElementById('current-score')
+let body = document.querySelector('body')
+let scorebox = document.getElementById('score')
+let highscorebox = document.getElementById('highscore')
 
 // event listeners
 b.style.display = 'flex'
@@ -112,19 +115,23 @@ function getHighScore() {
 }
 
 
-// // darkmode 
-// document.addEventListener('DOMContentLoaded', function () {
-//   var checkbox = document.querySelector('input[type="checkbox"]');
+// darkmode 
+document.addEventListener('DOMContentLoaded', function () {
+  var checkbox = document.querySelector('input[type="checkbox"]')
 
-//   checkbox.addEventListener('change', function () {
-//     if (checkbox.checked) {
-//       document.querySelector('body').style.backgroundColor = "black";
-//       document.querySelector('p').style.color = "white";
-//       document.getElementById('directions').style.color = "white";
-//     } else {
-//       document.querySelector('body').style.backgroundColor = "rgb(49, 115, 193)";
-//       document.querySelector('p').style.color = "black";
-//       document.querySelector('d').style.color = "black";
-//     }
-//   });
-// });
+  checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+      body.style.backgroundColor = "black"
+      scorebox.style.color = 'white'
+      scorebox.style.border = '1px solid white'
+      highscorebox.style.color = 'white'
+      highscorebox.style.border = '1px solid white'
+      p.style.color = "white"
+      d.style.color = "white"
+    } else {
+      document.querySelector('body').style.backgroundColor = "rgb(49, 115, 193)"
+      document.querySelector('p').style.color = "black"
+      document.querySelector('d').style.color = "black"
+    }
+  })
+})
