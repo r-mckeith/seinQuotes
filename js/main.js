@@ -12,8 +12,6 @@ function initialState() {
   b.style.display = 'flex'
   b.addEventListener('click', (e) => {
     e.preventDefault()
-    // let b = document.getElementById('start')
-    // b.style.display = 'none'
     getStarted()
   })
   let d = document.getElementById('directions')
@@ -23,12 +21,8 @@ function initialState() {
   document.getElementById('george').setAttribute('src', "")
   document.getElementById('kramer').setAttribute('src', "")
 }
+ 
 
-
-
-
-
-  
 function getStarted() {
     let b = document.getElementById('start')
     b.style.display = 'none'
@@ -64,7 +58,7 @@ function getQuote() {
     })
     .then(function (data) {
       quotes = data
-      console.log(quotes)
+      console.log(quotes.author)
       let p = document.getElementById('quote')
       p.innerText = quotes.quote
     })
@@ -74,16 +68,13 @@ function getQuote() {
     })
 }
 
-
-
- 
 function checkAnswer() {
   if (answer === quotes.author.toLowerCase()) {
     youreRight()
-    // console.log("RIGHT+++++++++++++++++++++++++++")
+    console.log("RIGHT+++++++++++++++")
   } else {
     youreWrong()
-    // console.log("WRONG+++++++++++++++++++++++++++++")
+    console.log("WRONG+++++++++++++++")
   }
 }
 
@@ -95,10 +86,9 @@ function youreRight() {
 function youreWrong() {
   initialState() 
 }
-
 initialState()
 
-// darkmode functionality
+// darkmode 
 document.addEventListener('DOMContentLoaded', function () {
   var checkbox = document.querySelector('input[type="checkbox"]');
 
@@ -106,10 +96,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (checkbox.checked) {
       document.querySelector('body').style.backgroundColor = "black";
       document.querySelector('p').style.color = "white";
+      document.getElementById('directions').style.color = "white";
     } else {
-      // do that
       document.querySelector('body').style.backgroundColor = "rgb(49, 115, 193)";
       document.querySelector('p').style.color = "black";
+      document.querySelector('d').style.color = "black";
     }
   });
 });

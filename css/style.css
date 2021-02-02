@@ -31,7 +31,7 @@ img {
 #directions {
     font-family: unna;
     font-size: 35px;
-    margin-top: 250px;
+    margin-top: 200px;
     text-align: center;
 }
 
@@ -50,22 +50,25 @@ p {
     font-family: unna;
     font-size: 35px;
     margin-top: 250px;
-    /* color: white; */
+   
 }
 
 #quote-container {
     display: flex;
+    justify-content: center;
 }
 
 #quote {
-    text-align: center;
+    text-align: justify;
     margin-top: 350 px;
+    margin: 00px 100px 0px 100px;
 }
 
 #buttons {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    
 }
 
 #jerry, #elaine, #george, #kramer {
