@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Unna&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
 
 * {
     box-sizing: border-box;
@@ -29,7 +29,7 @@ img {
 }
 
 #directions {
-    font-family: unna;
+    font-family: 'Inconsolata', monospace;
     font-size: 35px;
     margin-top: 200px;
     text-align: center;
@@ -47,7 +47,7 @@ img {
 }
 
 p {
-    font-family: unna;
+    font-family: 'Inconsolata', monospace;
     font-size: 35px;
     margin-top: 250px;
    

@@ -1,4 +1,4 @@
-// URL variables
+
 let jerryUrl = 'https://img.discogs.com/IT2ANZAn8zJIhQ_pV8qTyElA9zc=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-558436-1478198229-3737.jpeg.jpg'
 let elaineUrl = 'https://3.bp.blogspot.com/_JI1Ciz-JrcA/TS_JOAoyLmI/AAAAAAAAAFU/Uw74X-pIQGk/s1600/elaine.png'
 let georgeUrl = 'https://pbs.twimg.com/profile_images/2183616592/george-costanza1_400x400.jpg'
@@ -40,7 +40,6 @@ function initialState() {
   document.getElementById('kramer').setAttribute('src', "")
 }
 
-
 function getStarted() {
   let b = document.getElementById('start')
   b.style.display = 'none'
@@ -50,7 +49,6 @@ function getStarted() {
   document.getElementById('elaine').setAttribute('src', elaineUrl)
   document.getElementById('george').setAttribute('src', georgeUrl)
   document.getElementById('kramer').setAttribute('src', kramerUrl)
-  console.log("getQuote from getStarted")
   getQuote()
 }
 
@@ -61,8 +59,7 @@ function getQuote() {
     })
     .then(function (data) {
       quotes = data
-      console.log(quotes)
-      // console.log(quotes.author)
+      console.log(quotes.author)
       let p = document.getElementById('quote')
       p.innerText = quotes.quote
     })
@@ -73,41 +70,37 @@ function getQuote() {
 }
 
 function checkAnswer() {
-  console.log(answer)
   if (answer === quotes.author.toLowerCase()) {
     youreRight()
-    console.log("RIGHT+++++++++++++++")
   } else {
     youreWrong()
-    console.log("WRONG+++++++++++++++")
   }
 }
 
-
 function youreRight() {
-  console.log("getQuote from youreRight")
   getQuote()
 }
 
 function youreWrong() {
+  alert("Better luck next time!")
   initialState()
   b.style.display = 'flex'
 }
 
 
-// // darkmode 
-// document.addEventListener('DOMContentLoaded', function () {
-//   var checkbox = document.querySelector('input[type="checkbox"]');
+// darkmode 
+document.addEventListener('DOMContentLoaded', function () {
+  var checkbox = document.querySelector('input[type="checkbox"]');
 
-//   checkbox.addEventListener('change', function () {
-//     if (checkbox.checked) {
-//       document.querySelector('body').style.backgroundColor = "black";
-//       document.querySelector('p').style.color = "white";
-//       document.getElementById('directions').style.color = "white";
-//     } else {
-//       document.querySelector('body').style.backgroundColor = "rgb(49, 115, 193)";
-//       document.querySelector('p').style.color = "black";
-//       document.querySelector('d').style.color = "black";
-//     }
-//   });
-// });
+  checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+      document.querySelector('body').style.backgroundColor = "black";
+      document.querySelector('p').style.color = "white";
+      document.getElementById('directions').style.color = "white";
+    } else {
+      document.querySelector('body').style.backgroundColor = "rgb(49, 115, 193)";
+      document.querySelector('p').style.color = "black";
+      document.querySelector('d').style.color = "black";
+    }
+  });
+});
