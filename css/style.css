@@ -8,6 +8,9 @@ body {
     margin: 0;
     font-family: 'Inconsolata', monospace;
     background-color: rgb(49, 115, 193);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 #main-content {
@@ -70,13 +73,21 @@ p {
   margin: 00px 100px 0px 100px;
 }
 
-#buttons {
+.buttons {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
 #jerry, #elaine, #george, #kramer {
+  padding: 20px;
+  margin: 50px 12px 0px 12px;;
+  height: 125px;
+  width: auto;
+  border-radius: 50%;
+}
+
+#phoebe, #chandler, #rachel, #ross, #monica, #joey {
   padding: 20px;
   margin: 50px 12px 0px 12px;;
   height: 125px;
