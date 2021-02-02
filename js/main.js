@@ -93,14 +93,14 @@ function youreRight() {
   getQuote()
   score ++
   s.innerText = score
-  console.log(score)
 }
 
 function youreWrong() {
   alert("Better luck next time!")
   initialState()
   b.style.display = 'flex'
-  getHighScore()
+  score = 0
+  s.innerText = score
 }
 
 function getHighScore() {

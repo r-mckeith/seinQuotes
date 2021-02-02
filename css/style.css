@@ -6,87 +6,99 @@
 
 body {
     margin: 0;
-    font-family: 'unna';
+    font-family: 'Inconsolata', monospace;
     background-color: rgb(49, 115, 193);
 }
 
 #main-content {
-    min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
 }
 
 #header {
-    display: flex; 
-    flex-direction: row;
-    align-items: center;
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 img {
-    width: 250px;
+  width: 250px;
 }
 
-#toggle {
+#highscore {
   margin: 0px 20px 60px auto;
+  padding: 0px 20px 0px 20px;
+  border: 1px solid black;
+}
+
+#score {
+  margin: 0px 20px 60px auto;
+  padding: 0px 20px 0px 20px;
+  border: 1px solid black;
 }
 
 #directions {
-    font-family: 'Inconsolata', monospace;
-    font-size: 35px;
-    margin-top: 200px;
-    text-align: center;
+  font-size: 35px;
+  margin-top: 200px;
+  text-align: center;
 }
 
 #start-button {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #start {
-    padding: 20px;
-    margin: 50px 15px 0px 15px;;
-    justify-content: center;
+  padding: 20px;
+  margin: 50px 15px 0px 15px;;
+  justify-content: center;
 }
 
 p {
-    font-family: 'Inconsolata', monospace;
-    font-size: 35px;
-    margin-top: 250px;
-   
+  font-size: 35px;
+  margin-top: 250px; 
 }
 
 #quote-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #quote {
-    text-align: justify;
-    margin-top: 350 px;
-    margin: 00px 100px 0px 100px;
+  text-align: justify;
+  margin-top: 350 px;
+  margin: 00px 100px 0px 100px;
 }
 
 #buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 #jerry, #elaine, #george, #kramer {
-    padding: 20px;
-    margin: 50px 12px 0px 12px;;
-    height: 125px;
-    width: auto;
-    border-radius: 50%;
+  padding: 20px;
+  margin: 50px 12px 0px 12px;;
+  height: 125px;
+  width: auto;
+  border-radius: 50%;
 }
 
 #footer {
-    text-align:right;
-    margin: 0px 10px 15px 0px;
-    border-top: 3px solid;
-    border-color: black;
-    font-size: 15px;
-    color: black;
-    height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align:right;
+  margin: 0px 10px 15px 0px;
+  border-top: 3px solid;
+  border-color: black;
+  font-size: 15px;
+  color: black;
+  height: 50px;
+}
+
+#toggle {
+  margin: 70px auto 60px 20px;
 }
 
 /* The switch - the box around the slider */
