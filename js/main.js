@@ -8,7 +8,7 @@
 // let score = 0
 // let highscore = 5
 
-// element selection
+// // element selection
 // let b = document.getElementById('start')
 // let jerry = document.getElementById('jerry')
 // let elaine = document.getElementById('elaine')
