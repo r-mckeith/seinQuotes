@@ -5,15 +5,33 @@ let georgeUrl = 'https://pbs.twimg.com/profile_images/2183616592/george-costanza
 let kramerUrl = 'https://i.pinimg.com/originals/ac/60/98/ac609817e640c5ad582f0baf35d1634c.jpg'
 let answer = ""
 
+let b = document.getElementById('start')
+b.style.display = 'flex'
+b.addEventListener('click', (e) => {
+  e.preventDefault()
+  getStarted()
+})
+
+document.getElementById('jerry').addEventListener('click', function (e) {
+  answer = e.target.id
+  checkAnswer()
+})
+document.getElementById('elaine').addEventListener('click', function (e) {
+  answer = e.target.id
+  checkAnswer()
+})
+document.getElementById('george').addEventListener('click', function (e) {
+  answer = e.target.id
+  checkAnswer()
+})
+document.getElementById('kramer').addEventListener('click', function (e) {
+  answer = e.target.id
+  checkAnswer()
+})
+
 function initialState() {
   let p = document.getElementById('quote')
   p.innerText = ""
-  let b = document.getElementById('start')
-  b.style.display = 'flex'
-  b.addEventListener('click', (e) => {
-    e.preventDefault()
-    getStarted()
-  })
   let d = document.getElementById('directions')
   d.innerText = "See if you can beat the high score. Press start now!"
   document.getElementById('jerry').setAttribute('src', "")
@@ -21,34 +39,19 @@ function initialState() {
   document.getElementById('george').setAttribute('src', "")
   document.getElementById('kramer').setAttribute('src', "")
 }
- 
+
 
 function getStarted() {
-    let b = document.getElementById('start')
-    b.style.display = 'none'
-    let d = document.getElementById('directions')
-    d.innerText = ""
-    document.getElementById('jerry').setAttribute('src', jerryUrl)
-    document.getElementById('elaine').setAttribute('src', elaineUrl)
-    document.getElementById('george').setAttribute('src', georgeUrl)
-    document.getElementById('kramer').setAttribute('src', kramerUrl)
-    document.getElementById('jerry').addEventListener('click', function (e) {
-      answer = e.target.id
-      checkAnswer()
-    })
-    document.getElementById('elaine').addEventListener('click', function (e) {
-      answer = e.target.id
-      checkAnswer()
-    })
-    document.getElementById('george').addEventListener('click', function (e) {
-      answer = e.target.id
-      checkAnswer()
-    })
-    document.getElementById('kramer').addEventListener('click', function (e) {
-      answer = e.target.id
-      checkAnswer()
-    })
-    getQuote()
+  let b = document.getElementById('start')
+  b.style.display = 'none'
+  let d = document.getElementById('directions')
+  d.innerText = ""
+  document.getElementById('jerry').setAttribute('src', jerryUrl)
+  document.getElementById('elaine').setAttribute('src', elaineUrl)
+  document.getElementById('george').setAttribute('src', georgeUrl)
+  document.getElementById('kramer').setAttribute('src', kramerUrl)
+  console.log("getQuote from getStarted")
+  getQuote()
 }
 
 function getQuote() {
@@ -58,7 +61,8 @@ function getQuote() {
     })
     .then(function (data) {
       quotes = data
-      console.log(quotes.author)
+      console.log(quotes)
+      // console.log(quotes.author)
       let p = document.getElementById('quote')
       p.innerText = quotes.quote
     })
@@ -69,6 +73,7 @@ function getQuote() {
 }
 
 function checkAnswer() {
+  console.log(answer)
   if (answer === quotes.author.toLowerCase()) {
     youreRight()
     console.log("RIGHT+++++++++++++++")
@@ -80,27 +85,29 @@ function checkAnswer() {
 
 
 function youreRight() {
+  console.log("getQuote from youreRight")
   getQuote()
 }
 
 function youreWrong() {
-  initialState() 
+  initialState()
+  b.style.display = 'flex'
 }
-initialState()
 
-// darkmode 
-document.addEventListener('DOMContentLoaded', function () {
-  var checkbox = document.querySelector('input[type="checkbox"]');
 
-  checkbox.addEventListener('change', function () {
-    if (checkbox.checked) {
-      document.querySelector('body').style.backgroundColor = "black";
-      document.querySelector('p').style.color = "white";
-      document.getElementById('directions').style.color = "white";
-    } else {
-      document.querySelector('body').style.backgroundColor = "rgb(49, 115, 193)";
-      document.querySelector('p').style.color = "black";
-      document.querySelector('d').style.color = "black";
-    }
-  });
-});
+// // darkmode 
+// document.addEventListener('DOMContentLoaded', function () {
+//   var checkbox = document.querySelector('input[type="checkbox"]');
+
+//   checkbox.addEventListener('change', function () {
+//     if (checkbox.checked) {
+//       document.querySelector('body').style.backgroundColor = "black";
+//       document.querySelector('p').style.color = "white";
+//       document.getElementById('directions').style.color = "white";
+//     } else {
+//       document.querySelector('body').style.backgroundColor = "rgb(49, 115, 193)";
+//       document.querySelector('p').style.color = "black";
+//       document.querySelector('d').style.color = "black";
+//     }
+//   });
+// });
