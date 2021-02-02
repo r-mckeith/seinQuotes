@@ -5,6 +5,8 @@ let georgeUrl = 'https://pbs.twimg.com/profile_images/2183616592/george-costanza
 let kramerUrl = 'https://i.pinimg.com/originals/ac/60/98/ac609817e640c5ad582f0baf35d1634c.jpg'
 let seinfeldUrl = 'https://seinfeld-quotes.herokuapp.com/random'
 let answer = ""
+let score = 0
+let highscore = 5
 
 // element selection
 let b = document.getElementById('start')
@@ -14,13 +16,10 @@ let george = document.getElementById('george')
 let kramer = document.getElementById('kramer')
 let p = document.getElementById('quote')
 let d = document.getElementById('directions')
-
-
-
-b.style.display = 'flex'
-
+let s = document.getElementById('current-score')
 
 // event listeners
+b.style.display = 'flex'
 b.addEventListener('click', (e) => {
   e.preventDefault()
   getStarted()
@@ -92,12 +91,24 @@ function checkAnswer() {
 
 function youreRight() {
   getQuote()
+  score ++
+  s.innerText = score
+  console.log(score)
 }
 
 function youreWrong() {
   alert("Better luck next time!")
   initialState()
   b.style.display = 'flex'
+  getHighScore()
+}
+
+function getHighScore() {
+  if (score > highscore){
+    console.log("You won!")
+  }else{
+    console.log("You lost")
+  }
 }
 
 
