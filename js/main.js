@@ -4,6 +4,7 @@ let elaineUrl = 'https://3.bp.blogspot.com/_JI1Ciz-JrcA/TS_JOAoyLmI/AAAAAAAAAFU/
 let georgeUrl = 'https://pbs.twimg.com/profile_images/2183616592/george-costanza1_400x400.jpg'
 let kramerUrl = 'https://i.pinimg.com/originals/ac/60/98/ac609817e640c5ad582f0baf35d1634c.jpg'
 let seinfeldUrl = 'https://seinfeld-quotes.herokuapp.com/random'
+let logoUrl = 'https://cdn.freebiesupply.com/logos/large/2x/seinfeld-logo-png-transparent.png'
 let gifUrl = "https://api.giphy.com/v1/gifs/random?api_key=GY4FWR18NjpgkpcFzW3UXE16pMCKneaL&tag=seinfeld&rating=g"
 let answer = ""
 let score = 0
@@ -156,20 +157,23 @@ document.addEventListener('DOMContentLoaded', function () {
   checkbox.addEventListener('change', function () {
     if (checkbox.checked) {
       // body.style.backgroundImage = "url('https://i.pinimg.com/originals/ca/41/93/ca419365d8f738b1bf58b97ff6df39a1.jpg')"
-      // body.style.backgroundColor = 'black'
-      body.style.backgroundColor = 'white'
+      body.style.backgroundColor = 'rgb(249 249 250'
+      logo.setAttribute('src', 'https://hipfonts.com/wp-content/uploads/2020/07/friends-logo-font.png')
       // logo.style.display = 'none'
-      scorebox.style.color = 'white'
-      scorebox.style.border = '1px solid white'
-      highscorebox.style.color = 'white'
-      highscorebox.style.border = '1px solid white'
+      // scorebox.style.color = 'white'
+      // scorebox.style.border = '1px solid white'
+      // highscorebox.style.color = 'white'
+      scorebox.style.marginTop = '25px'
+      highscorebox.style.marginTop = '25px'
+      // highscorebox.style.border = '1px solid white'
+      
       highscoreh2.innerText = "Lindsey: 27"
-      p.style.color = "white"
+      // p.style.color = "white"
       p.innerText=""
-      d.style.color = "white"
+      d.innerText = ""
       b.style.display = 'none'
-      footer.style.color = 'white'
-      footer.style.borderTop = '3px solid white'
+      // footer.style.color = 'white'
+      // footer.style.borderTop = '3px solid white'
       jerry.setAttribute('src', "")
       elaine.setAttribute('src', "")
       george.setAttribute('src', "")
@@ -178,21 +182,22 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       b.style.display = 'flex'
       b2.style.display = 'none'
-      body.style.backgroundImage = ""
+      // body.style.backgroundImage = ""
       body.style.backgroundColor = "rgb(49, 115, 193)"
-      logo.style.display = 'flex'
+      logo.setAttribute('src', logoUrl)
+      // logo.style.display = 'flex'
       highscoreh2.innerText = "Ryan: 50"
       p.innerText = ""
       d.innerText = "See if you can beat the high score. Press start now!"
-      d.style.color = 'black'
-      scorebox.style.color = 'black'
-      scorebox.style.border = '1px solid black'
-      scorebox.style.borderRadius = '25px'
-      highscorebox.style.color = 'black'
-      highscorebox.style.border = '1px solid black'
-      highscorebox.style.borderRadius = '25px'
-      footer.style.color = 'black'
-      footer.style.borderTop = '3px solid black'
+      // d.style.color = 'black'
+      // scorebox.style.color = 'black'
+      // scorebox.style.border = '1px solid black'
+      // scorebox.style.borderRadius = '25px'
+      // highscorebox.style.color = 'black'
+      // highscorebox.style.border = '1px solid black'
+      // highscorebox.style.borderRadius = '25px'
+      // footer.style.color = 'black'
+      // footer.style.borderTop = '3px solid black'
       phoebe.setAttribute('src', "")
       chandler.setAttribute('src', "")
       rachel.setAttribute('src', "")
@@ -269,7 +274,7 @@ function initialStateFriends() {
 
 function getStartedFriends() {
   b2.style.display = 'none'
-  d.innerText = ""
+  // d.innerText = ""
   phoebe.setAttribute('src', phoebeUrl)
   chandler.setAttribute('src', chandlerUrl)
   rachel.setAttribute('src', rachelUrl)
