@@ -1,7 +1,7 @@
 // global variables
 let seinfeldUrl = 'https://seinfeld-quotes.herokuapp.com/random'
 let logoUrl = 'https://cdn.freebiesupply.com/logos/large/2x/seinfeld-logo-png-transparent.png'
-let friendsLogoUrl = 'https://hipfonts.com/wp-content/uploads/2020/07/friends-logo-font.png'
+let friendsLogoUrl = 'https://cdn.shopify.com/s/files/1/0333/0480/5511/products/Friends-05_1476x.jpg?v=1588975211'
 let gifUrl = "https://api.giphy.com/v1/gifs/random?api_key=GY4FWR18NjpgkpcFzW3UXE16pMCKneaL&tag=seinfeld&rating=g"
 let answer = ""
 let score = 0
@@ -90,9 +90,9 @@ function checkAnswer() {
     score++
     s.innerText = score
   } else {
-    getGif()
-    // alert("Better luck next time!")
-    // initialState()
+    // getGif()
+    alert("Better luck next time!")
+    initialState()
   }
 }
 
@@ -112,128 +112,131 @@ function getGif() {
       })
   }
 
-// friends mode 
-document.addEventListener('DOMContentLoaded', function () {
-  var checkbox = document.querySelector('input[type="checkbox"]')
-
-  checkbox.addEventListener('change', function () {
-    if (checkbox.checked) {
-      body.style.backgroundColor = 'rgb(249 249 250'
-      logo.setAttribute('src', friendsLogoUrl)
-      scorebox.style.marginTop = '25px'
-      highscorebox.style.marginTop = '25px'
-      highscoreh2.innerText = "Lindsey: 27"
-      p.innerText=""
-      d.innerText = ""
-      b.style.display = 'none'
-      buttons.style.display = 'none'
-      getStartedFriends()
-    } else {
-      b.style.display = 'flex'
-      b2.style.display = 'none'
-      body.style.backgroundColor = "rgb(49, 115, 193)"
-      logo.setAttribute('src', logoUrl)
-      highscoreh2.innerText = "Ryan: 50"
-      score = 0
-      s.innerText = score
-      p.innerText = ""
-      d.innerText = "See if you can beat the high score. Press start now!"
-      buttonsf.style.display = 'none'
-    }
-  })
-})
-
-// // global variables
-let friendsUrl = 'https://friends-quotes-api.herokuapp.com/quotes/random'
-
-// // element selectors
-let phoebe = document.getElementById('phoebe')
-let chandler = document.getElementById('chandler')
-let rachel = document.getElementById('rachel')
-let ross = document.getElementById('ross')
-let monica = document.getElementById('monica')
-let joey = document.getElementById('joey')
-
-// event listeners
-b2.addEventListener('click', (e) => {
-  e.preventDefault()
-  getStartedFriends()
-})
-
-let friendsGang = [phoebe, chandler, rachel, ross, monica, joey]
-
-for (let i=0; i < friendsGang.length; i++) {
-  friendsGang[i].addEventListener('click', function (e) {
-    answer = e.target.id
-    checkAnswerFriends()
-  })
-}
-
-// // named functions
-function initialStateFriends() {
-  b2.style.display = 'flex'
-  p.innerText = ""
-  score = 0
-  s.innerText = score
-  d.innerText = "See if you can beat the high score. Press start now!"
-  buttonsf.style.display = 'none'
-}
-
-function getStartedFriends() {
-  b2.style.display = 'none'
-  d.innerText = ""
-  buttonsf.style.display = 'flex'
-  getQuoteFriends()
-}
-
-function getQuoteFriends() {
-  fetch(friendsUrl)
-    .then(function (data) {
-      return data.json()
-    })
-    .then(function (data) {
-      quotes = data
-      console.log(quotes.character)
-      p.innerText = quotes.quote
-    })
-    .catch((error) => {
-      console.error("ERROR ".error)
-      return quotes.author
-    })
-}
-
-function checkAnswerFriends() {
-  if (answer === quotes.character.toLowerCase()) {
-    getQuoteFriends()
-    score++
-    s.innerText = score
-  } else {
-    alert("Better luck next time!")
-    initialStateFriends()
-  }
-}
-
-// // darkmode 
+// // friends mode 
 // document.addEventListener('DOMContentLoaded', function () {
 //   var checkbox = document.querySelector('input[type="checkbox"]')
 
 //   checkbox.addEventListener('change', function () {
 //     if (checkbox.checked) {
-//       body.style.backgroundColor = "black"
-//       scorebox.style.color = 'white'
-//       scorebox.style.border = '1px solid white'
-//       highscorebox.style.color = 'white'
-//       highscorebox.style.border = '1px solid white'
-//       p.style.color = "white"
-//       d.style.color = "white"
+//       body.style.backgroundColor = 'rgb(255 255 255)'
+//       logo.setAttribute('src', friendsLogoUrl)
+//       // scorebox.style.marginTop = '25px'
+//       // highscorebox.style.marginTop = '25px'
+//       highscoreh2.innerText = "Lindsey: 27"
+//       p.innerText=""
+//       d.innerText = ""
+//       b.style.display = 'none'
+//       buttons.style.display = 'none'
+//       getStartedFriends()
 //     } else {
+//       b.style.display = 'flex'
+//       b2.style.display = 'none'
 //       body.style.backgroundColor = "rgb(49, 115, 193)"
-//       body.style.backgroundImage = "url('')"
-//       p.style.color = "black"
-//       d.style.color = "black"
+//       logo.setAttribute('src', logoUrl)
+//       highscoreh2.innerText = "Ryan: 50"
+//       score = 0
+//       s.innerText = score
+//       p.innerText = ""
+//       d.innerText = "See if you can beat the high score. Press start now!"
+//       buttonsf.style.display = 'none'
 //     }
 //   })
 // })
+
+// // // global variables
+// let friendsUrl = 'https://friends-quotes-api.herokuapp.com/quotes/random'
+
+// // // element selectors
+// let phoebe = document.getElementById('phoebe')
+// let chandler = document.getElementById('chandler')
+// let rachel = document.getElementById('rachel')
+// let ross = document.getElementById('ross')
+// let monica = document.getElementById('monica')
+// let joey = document.getElementById('joey')
+
+// // event listeners
+// b2.addEventListener('click', (e) => {
+//   e.preventDefault()
+//   getStartedFriends()
+// })
+
+// let friendsGang = [phoebe, chandler, rachel, ross, monica, joey]
+
+// for (let i=0; i < friendsGang.length; i++) {
+//   friendsGang[i].addEventListener('click', function (e) {
+//     answer = e.target.id
+//     checkAnswerFriends()
+//   })
+// }
+
+// // // named functions
+// function initialStateFriends() {
+//   b2.style.display = 'flex'
+//   p.innerText = ""
+//   score = 0
+//   s.innerText = score
+//   d.innerText = "See if you can beat the high score. Press start now!"
+//   buttonsf.style.display = 'none'
+// }
+
+// function getStartedFriends() {
+//   b2.style.display = 'none'
+//   d.innerText = ""
+//   buttonsf.style.display = 'flex'
+//   getQuoteFriends()
+// }
+
+// function getQuoteFriends() {
+//   fetch(friendsUrl)
+//     .then(function (data) {
+//       return data.json()
+//     })
+//     .then(function (data) {
+//       quotes = data
+//       console.log(quotes.character)
+//       p.innerText = quotes.quote
+//     })
+//     .catch((error) => {
+//       console.error("ERROR ".error)
+//       return quotes.author
+//     })
+// }
+
+// function checkAnswerFriends() {
+//   if (answer === quotes.character.toLowerCase()) {
+//     getQuoteFriends()
+//     score++
+//     s.innerText = score
+//   } else {
+//     alert("Better luck next time!")
+//     initialStateFriends()
+//   }
+// }
+
+// darkmode 
+document.addEventListener('DOMContentLoaded', function () {
+  var checkbox = document.querySelector('input[type="checkbox"]')
+
+  checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+      body.style.backgroundColor = "black"
+      scorebox.style.color = 'white'
+      scorebox.style.border = '1px solid white'
+      highscorebox.style.color = 'white'
+      highscorebox.style.border = '1px solid white'
+      p.style.color = "white"
+      d.style.color = "white"
+    } else {
+      body.style.backgroundColor = "rgb(49, 115, 193)"
+      scorebox.style.color = 'black'
+      scorebox.style.border = '1px solid black'
+      highscorebox.style.color = 'black'
+      highscorebox.style.border = '1px solid black'
+      p.style.color = "black"
+      d.style.color = "black"
+    }
+  })
+})
 
 
 
