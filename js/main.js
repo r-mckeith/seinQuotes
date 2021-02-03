@@ -22,6 +22,7 @@ let body = document.querySelector('body')
 let scorebox = document.getElementById('score')
 let highscorebox = document.getElementById('highscore')
 let highscoreh2 = document.getElementById('highscoreh2')
+let scores = document.getElementById('scores')
 let logo = document.getElementById('logo')
 let b2 = document.getElementById('start2')
 let footer = document.getElementById('footer')
@@ -106,7 +107,7 @@ function getQuote() {
 }
 
 function checkQuote(author, quote) {
-  if (author === "Jerry" || "Elaine" || "George" || "Kramer") {
+  if (author === "Jerry" || author === "Elaine" || author === "George" || author === "Kramer") {
     p.innerText = quote
     console.log(author)
     // checkAnswer()
@@ -154,17 +155,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   checkbox.addEventListener('change', function () {
     if (checkbox.checked) {
-      body.style.backgroundImage = "url('https://i.pinimg.com/originals/ca/41/93/ca419365d8f738b1bf58b97ff6df39a1.jpg')"
-      body.style.backgroundColor = 'black'
-      logo.style.display = 'none'
+      // body.style.backgroundImage = "url('https://i.pinimg.com/originals/ca/41/93/ca419365d8f738b1bf58b97ff6df39a1.jpg')"
+      // body.style.backgroundColor = 'black'
+      body.style.backgroundColor = 'white'
+      // logo.style.display = 'none'
       scorebox.style.color = 'white'
-      scorebox.style.marginTop = '30px'
       scorebox.style.border = '1px solid white'
-      scorebox.style.borderRadius = '25px'
       highscorebox.style.color = 'white'
-      highscorebox.style.marginTop = '30px'
       highscorebox.style.border = '1px solid white'
-      highscorebox.style.borderRadius = '25px'
       highscoreh2.innerText = "Lindsey: 27"
       p.style.color = "white"
       p.innerText=""
@@ -311,7 +309,7 @@ function checkAnswerFriends() {
   }
 }
 
-// darkmode 
+// // darkmode 
 // document.addEventListener('DOMContentLoaded', function () {
 //   var checkbox = document.querySelector('input[type="checkbox"]')
 
@@ -327,12 +325,6 @@ function checkAnswerFriends() {
 //     } else {
 //       body.style.backgroundColor = "rgb(49, 115, 193)"
 //       body.style.backgroundImage = "url('')"
-//       phoebe.setAttribute('src', "")
-//       chandler.setAttribute('src', "")
-//       rachel.setAttribute('src', "")
-//       ross.setAttribute('src', "")
-//       monica.setAttribute('src', "")
-//       joey.setAttribute('src', "")
 //       p.style.color = "black"
 //       d.style.color = "black"
 //     }

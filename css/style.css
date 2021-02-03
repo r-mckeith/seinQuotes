@@ -8,6 +8,7 @@ body {
     margin: 0;
     font-family: 'Inconsolata', monospace;
     background-color: rgb(49, 115, 193);
+    /* for friends mode */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -24,8 +25,14 @@ body {
   justify-content: space-between;
 }
 
-img {
+#logo {
   width: 250px;
+  margin: -20px 0px 0px 20px;
+}
+
+#scores {
+  display: flex;
+  flex-direction: row;
 }
 
 #highscore {
@@ -71,6 +78,7 @@ p {
 #quote-container {
   display: flex;
   justify-content: center;
+  height: 175px;
 }
 
 #quote {
@@ -88,7 +96,7 @@ p {
 #jerry, #elaine, #george, #kramer {
   padding: 20px;
   margin: 50px 12px 0px 12px;;
-  height: 125px;
+  height: 150px;
   width: auto;
   border-radius: 50%;
 }
@@ -184,4 +192,3 @@ p {
   #toggleswitch {
       box-shadow: 0 0 1px GREY;;
   }
-
