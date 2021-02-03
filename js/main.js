@@ -4,6 +4,7 @@ let elaineUrl = 'https://3.bp.blogspot.com/_JI1Ciz-JrcA/TS_JOAoyLmI/AAAAAAAAAFU/
 let georgeUrl = 'https://pbs.twimg.com/profile_images/2183616592/george-costanza1_400x400.jpg'
 let kramerUrl = 'https://i.pinimg.com/originals/ac/60/98/ac609817e640c5ad582f0baf35d1634c.jpg'
 let seinfeldUrl = 'https://seinfeld-quotes.herokuapp.com/random'
+let gifUrl = "https://api.giphy.com/v1/gifs/random?api_key=GY4FWR18NjpgkpcFzW3UXE16pMCKneaL&tag=seinfeld&rating=g"
 let answer = ""
 let score = 0
 let highscore = 5
@@ -24,6 +25,7 @@ let highscoreh2 = document.getElementById('highscoreh2')
 let logo = document.getElementById('logo')
 let b2 = document.getElementById('start2')
 let footer = document.getElementById('footer')
+let gif = document.getElementById('gif')
 
 // event listeners
 b.style.display = 'flex'
@@ -72,6 +74,22 @@ function getStarted() {
   getQuote()
 }
 
+// function getQuote() {
+//   fetch(seinfeldUrl)
+//     .then(function (data) {
+//       return data.json()
+//     })
+//     .then(function (data) {
+//       quotes = data
+//       console.log(quotes.author)
+//       p.innerText = quotes.quote
+//     })
+//     .catch((error) => {
+//       console.error("ERROR ".error)
+//       return quotes.author
+//     })
+// }
+
 function getQuote() {
   fetch(seinfeldUrl)
     .then(function (data) {
@@ -79,13 +97,23 @@ function getQuote() {
     })
     .then(function (data) {
       quotes = data
-      console.log(quotes.author)
-      p.innerText = quotes.quote
+      checkQuote(quotes.author, quotes.quote)
     })
     .catch((error) => {
       console.error("ERROR ".error)
       return quotes.author
     })
+}
+
+function checkQuote(author, quote) {
+  if (author === "Jerry" || "Elaine" || "George" || "Kramer") {
+    p.innerText = quote
+    console.log(author)
+    // checkAnswer()
+  } else {
+    console.log("Too many authors")
+    getQuote()
+  }
 }
 
 function checkAnswer() {
@@ -94,6 +122,7 @@ function checkAnswer() {
     score++
     s.innerText = score
   } else {
+    // getGif()
     alert("Better luck next time!")
     initialState()
     b.style.display = 'flex'
@@ -102,6 +131,22 @@ function checkAnswer() {
     p.innerText = ""
   }
 }
+
+// function getGif() {
+//     fetch(gifUrl) 
+//       .then(function (data) {
+//         return data.json()
+//       })
+//       .then(function (data) {
+//         giphy = data
+//         gif.setAttribute('src', giphy.data.embed_url)
+//         console.log(giphy.data)
+//       })
+//       .catch((error) => {
+//         console.error("ERROR ".error)
+//         return quotes.author
+//       })
+//   }
 
 // friends mode
 document.addEventListener('DOMContentLoaded', function () {
@@ -115,11 +160,14 @@ document.addEventListener('DOMContentLoaded', function () {
       scorebox.style.color = 'white'
       scorebox.style.marginTop = '30px'
       scorebox.style.border = '1px solid white'
+      scorebox.style.borderRadius = '25px'
       highscorebox.style.color = 'white'
       highscorebox.style.marginTop = '30px'
       highscorebox.style.border = '1px solid white'
+      highscorebox.style.borderRadius = '25px'
       highscoreh2.innerText = "Lindsey: 27"
       p.style.color = "white"
+      p.innerText=""
       d.style.color = "white"
       b.style.display = 'none'
       footer.style.color = 'white'
@@ -141,8 +189,10 @@ document.addEventListener('DOMContentLoaded', function () {
       d.style.color = 'black'
       scorebox.style.color = 'black'
       scorebox.style.border = '1px solid black'
+      scorebox.style.borderRadius = '25px'
       highscorebox.style.color = 'black'
       highscorebox.style.border = '1px solid black'
+      highscorebox.style.borderRadius = '25px'
       footer.style.color = 'black'
       footer.style.borderTop = '3px solid black'
       phoebe.setAttribute('src', "")

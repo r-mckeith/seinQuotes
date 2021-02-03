@@ -32,12 +32,14 @@ img {
   margin: 0px 20px 60px auto;
   padding: 0px 20px 0px 20px;
   border: 1px solid black;
+  border-radius: 25px;
 }
 
 #score {
   margin: 0px 20px 60px auto;
   padding: 0px 20px 0px 20px;
   border: 1px solid black;
+  border-radius: 25px;
 }
 
 #directions {
