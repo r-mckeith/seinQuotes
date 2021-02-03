@@ -46,15 +46,19 @@ img {
   text-align: center;
 }
 
-#start-button {
+#start-button, #start-button2 {
   display: flex;
   justify-content: center;
 }
 
-#start {
+#start, #start2 {
   padding: 20px;
   margin: 50px 15px 0px 15px;;
   justify-content: center;
+}
+
+#start2 {
+  display: none;
 }
 
 p {
@@ -108,7 +112,7 @@ p {
   height: 50px;
 }
 
-#toggle {
+#toggle, #toggle2 {
   margin: 70px auto 60px 20px;
 }
 
