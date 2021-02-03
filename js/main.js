@@ -20,6 +20,7 @@ let s = document.getElementById('current-score')
 let body = document.querySelector('body')
 let scorebox = document.getElementById('score')
 let highscorebox = document.getElementById('highscore')
+let highscoreh2 = document.getElementById('highscoreh2')
 let logo = document.getElementById('logo')
 let b2 = document.getElementById('start2')
 
@@ -103,26 +104,32 @@ function checkAnswer() {
 
 
 // darkmode 
-document.addEventListener('DOMContentLoaded', function () {
-  var checkbox = document.querySelector('input[type="checkbox"]')
+// document.addEventListener('DOMContentLoaded', function () {
+//   var checkbox = document.querySelector('input[type="checkbox"]')
 
-  checkbox.addEventListener('change', function () {
-    if (checkbox.checked) {
-      body.style.backgroundColor = "black"
-      scorebox.style.color = 'white'
-      scorebox.style.border = '1px solid white'
-      highscorebox.style.color = 'white'
-      highscorebox.style.border = '1px solid white'
-      p.style.color = "white"
-      d.style.color = "white"
-      b2.style.display = 'flex'
-    } else {
-      body.style.backgroundColor = "rgb(49, 115, 193)"
-      p.style.color = "black"
-      d.style.color = "black"
-    }
-  })
-})
+//   checkbox.addEventListener('change', function () {
+//     if (checkbox.checked) {
+//       body.style.backgroundColor = "black"
+//       scorebox.style.color = 'white'
+//       scorebox.style.border = '1px solid white'
+//       highscorebox.style.color = 'white'
+//       highscorebox.style.border = '1px solid white'
+//       p.style.color = "white"
+//       d.style.color = "white"
+//     } else {
+//       body.style.backgroundColor = "rgb(49, 115, 193)"
+//       body.style.backgroundImage = "url('')"
+//       phoebe.setAttribute('src', "")
+//       chandler.setAttribute('src', "")
+//       rachel.setAttribute('src', "")
+//       ross.setAttribute('src', "")
+//       monica.setAttribute('src', "")
+//       joey.setAttribute('src', "")
+//       p.style.color = "black"
+//       d.style.color = "black"
+//     }
+//   })
+// })
 
 // friends mode
 document.addEventListener('DOMContentLoaded', function () {
@@ -139,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
       highscorebox.style.color = 'white'
       highscorebox.style.marginTop = '30px'
       highscorebox.style.border = '1px solid white'
+      highscoreh2.innerText = "Lindsey: 27"
       p.style.color = "white"
       d.style.color = "white"
       b.style.display = 'none'

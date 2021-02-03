@@ -179,3 +179,7 @@ p {
     border-radius: 50%;
   }
 
+  #toggleswitch {
+      box-shadow: 0 0 1px GREY;;
+  }
+
