@@ -87,7 +87,7 @@ p {
   margin: 00px 100px 0px 100px;
 }
 
-.buttons {
+.buttons, .buttons-friends {
   display: none;
   flex-direction: row;
   justify-content: center;
@@ -99,6 +99,11 @@ p {
   height: 150px;
   width: auto;
   border-radius: 50%;
+}
+
+#gif-container {
+  display: flex;
+  justify-content: center;
 }
 
 #phoebe, #chandler, #rachel, #ross, #monica, #joey {

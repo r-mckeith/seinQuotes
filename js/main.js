@@ -1,8 +1,4 @@
 // global variables
-// let jerryUrl = 'https://img.discogs.com/IT2ANZAn8zJIhQ_pV8qTyElA9zc=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-558436-1478198229-3737.jpeg.jpg'
-// let elaineUrl = 'https://3.bp.blogspot.com/_JI1Ciz-JrcA/TS_JOAoyLmI/AAAAAAAAAFU/Uw74X-pIQGk/s1600/elaine.png'
-// let georgeUrl = 'https://pbs.twimg.com/profile_images/2183616592/george-costanza1_400x400.jpg'
-// let kramerUrl = 'https://i.pinimg.com/originals/ac/60/98/ac609817e640c5ad582f0baf35d1634c.jpg'
 let seinfeldUrl = 'https://seinfeld-quotes.herokuapp.com/random'
 let logoUrl = 'https://cdn.freebiesupply.com/logos/large/2x/seinfeld-logo-png-transparent.png'
 let friendsLogoUrl = 'https://hipfonts.com/wp-content/uploads/2020/07/friends-logo-font.png'
@@ -30,6 +26,7 @@ let b2 = document.getElementById('start2')
 let footer = document.getElementById('footer')
 let gif = document.getElementById('gif')
 let buttons = document.querySelector('.buttons')
+let buttonsf = document.querySelector('.buttons-friends')
 
 // event listeners
 b.addEventListener('click', (e) => {
@@ -60,7 +57,6 @@ function getStarted() {
   b.style.display = 'none'
   d.innerText = ""
   buttons.style.display = 'flex'
-  console.log(buttons)
   getQuote()
 }
 
@@ -94,27 +90,27 @@ function checkAnswer() {
     score++
     s.innerText = score
   } else {
-    // getGif()
-    alert("Better luck next time!")
-    initialState()
+    getGif()
+    // alert("Better luck next time!")
+    // initialState()
   }
 }
 
-// function getGif() {
-//     fetch(gifUrl) 
-//       .then(function (data) {
-//         return data.json()
-//       })
-//       .then(function (data) {
-//         giphy = data
-//         gif.setAttribute('src', giphy.data.image_url)
-//         console.log(giphy.data)
-//       })
-//       .catch((error) => {
-//         console.error("ERROR ".error)
-//         return quotes.author
-//       })
-//   }
+function getGif() {
+    fetch(gifUrl) 
+      .then(function (data) {
+        return data.json()
+      })
+      .then(function (data) {
+        giphy = data
+        gif.setAttribute('src', giphy.data.image_url)
+        console.log(giphy.data)
+      })
+      .catch((error) => {
+        console.error("ERROR ".error)
+        return quotes.author
+      })
+  }
 
 // friends mode 
 document.addEventListener('DOMContentLoaded', function () {
@@ -130,10 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
       p.innerText=""
       d.innerText = ""
       b.style.display = 'none'
-      jerry.setAttribute('src', "")
-      elaine.setAttribute('src', "")
-      george.setAttribute('src', "")
-      kramer.setAttribute('src', "")
+      buttons.style.display = 'none'
       getStartedFriends()
     } else {
       b.style.display = 'flex'
@@ -141,25 +134,16 @@ document.addEventListener('DOMContentLoaded', function () {
       body.style.backgroundColor = "rgb(49, 115, 193)"
       logo.setAttribute('src', logoUrl)
       highscoreh2.innerText = "Ryan: 50"
+      score = 0
+      s.innerText = score
       p.innerText = ""
       d.innerText = "See if you can beat the high score. Press start now!"
-      phoebe.setAttribute('src', "")
-      chandler.setAttribute('src', "")
-      rachel.setAttribute('src', "")
-      ross.setAttribute('src', "")
-      monica.setAttribute('src', "")
-      joey.setAttribute('src', "")
+      buttonsf.style.display = 'none'
     }
   })
 })
 
 // // global variables
-let phoebeUrl = 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/lisa-kudrow-friends-phoebe-buffay-1546435984.jpg?crop=1xw:0.8166666666666667xh;center,top&resize=480:*'
-let chandlerUrl = 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters_opt/p-friends-matthew-perry.jpg'
-let rachelUrl = 'https://pyxis.nymag.com/v1/imgs/47c/71a/130bf1e557e534b3f2be3351afc2ecf952-17-rachel-green-jewish.rsquare.w700.jpg'
-let rossUrl = 'https://pyxis.nymag.com/v1/imgs/672/4c7/a13ab0142b7e3f7b3a8994c20c2b0256a5-24-ross-friends.rsquare.w700.jpg'
-let monicaUrl = 'https://i.pinimg.com/736x/ce/72/09/ce720980b962f81e9849bd65c1f5dd8a.jpg'
-let joeyUrl = 'https://upload.wikimedia.org/wikipedia/en/d/da/Matt_LeBlanc_as_Joey_Tribbiani.jpg'
 let friendsUrl = 'https://friends-quotes-api.herokuapp.com/quotes/random'
 
 // // element selectors
@@ -192,23 +176,13 @@ function initialStateFriends() {
   score = 0
   s.innerText = score
   d.innerText = "See if you can beat the high score. Press start now!"
-  phoebe.setAttribute('src', "")
-  chandler.setAttribute('src', "")
-  rachel.setAttribute('src', "")
-  ross.setAttribute('src', "")
-  monica.setAttribute('src', "")
-  joey.setAttribute('src', "")
+  buttonsf.style.display = 'none'
 }
 
 function getStartedFriends() {
   b2.style.display = 'none'
   d.innerText = ""
-  phoebe.setAttribute('src', phoebeUrl)
-  chandler.setAttribute('src', chandlerUrl)
-  rachel.setAttribute('src', rachelUrl)
-  ross.setAttribute('src', rossUrl)
-  monica.setAttribute('src', monicaUrl)
-  joey.setAttribute('src', joeyUrl)
+  buttonsf.style.display = 'flex'
   getQuoteFriends()
 }
 
