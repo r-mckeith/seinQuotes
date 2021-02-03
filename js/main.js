@@ -1,8 +1,8 @@
 // global variables
-let jerryUrl = 'https://img.discogs.com/IT2ANZAn8zJIhQ_pV8qTyElA9zc=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-558436-1478198229-3737.jpeg.jpg'
-let elaineUrl = 'https://3.bp.blogspot.com/_JI1Ciz-JrcA/TS_JOAoyLmI/AAAAAAAAAFU/Uw74X-pIQGk/s1600/elaine.png'
-let georgeUrl = 'https://pbs.twimg.com/profile_images/2183616592/george-costanza1_400x400.jpg'
-let kramerUrl = 'https://i.pinimg.com/originals/ac/60/98/ac609817e640c5ad582f0baf35d1634c.jpg'
+// let jerryUrl = 'https://img.discogs.com/IT2ANZAn8zJIhQ_pV8qTyElA9zc=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-558436-1478198229-3737.jpeg.jpg'
+// let elaineUrl = 'https://3.bp.blogspot.com/_JI1Ciz-JrcA/TS_JOAoyLmI/AAAAAAAAAFU/Uw74X-pIQGk/s1600/elaine.png'
+// let georgeUrl = 'https://pbs.twimg.com/profile_images/2183616592/george-costanza1_400x400.jpg'
+// let kramerUrl = 'https://i.pinimg.com/originals/ac/60/98/ac609817e640c5ad582f0baf35d1634c.jpg'
 let seinfeldUrl = 'https://seinfeld-quotes.herokuapp.com/random'
 let logoUrl = 'https://cdn.freebiesupply.com/logos/large/2x/seinfeld-logo-png-transparent.png'
 let friendsLogoUrl = 'https://hipfonts.com/wp-content/uploads/2020/07/friends-logo-font.png'
@@ -29,6 +29,7 @@ let logo = document.getElementById('logo')
 let b2 = document.getElementById('start2')
 let footer = document.getElementById('footer')
 let gif = document.getElementById('gif')
+let buttons = document.querySelector('.buttons')
 
 // event listeners
 b.addEventListener('click', (e) => {
@@ -52,19 +53,14 @@ function initialState() {
   s.innerText = score
   b.style.display = 'flex'
   d.innerText = "See if you can beat the high score. Press start now!"
-  jerry.setAttribute('src', "")
-  elaine.setAttribute('src', "")
-  george.setAttribute('src', "")
-  kramer.setAttribute('src', "")
+  buttons.style.display = 'none'
 }
 
 function getStarted() {
   b.style.display = 'none'
   d.innerText = ""
-  jerry.setAttribute('src', jerryUrl)
-  elaine.setAttribute('src', elaineUrl)
-  george.setAttribute('src', georgeUrl)
-  kramer.setAttribute('src', kramerUrl)
+  buttons.style.display = 'flex'
+  console.log(buttons)
   getQuote()
 }
 
@@ -111,7 +107,7 @@ function checkAnswer() {
 //       })
 //       .then(function (data) {
 //         giphy = data
-//         gif.setAttribute('src', giphy.data.embed_url)
+//         gif.setAttribute('src', giphy.data.image_url)
 //         console.log(giphy.data)
 //       })
 //       .catch((error) => {
@@ -189,36 +185,13 @@ for (let i=0; i < friendsGang.length; i++) {
   })
 }
 
-// phoebe
-
-// chandler.addEventListener('click', function (e) {
-//   answer = e.target.id
-//   checkAnswerFriends()
-// })
-
-// rachel.addEventListener('click', function (e) {
-//   answer = e.target.id
-//   checkAnswerFriends()
-// })
-
-// ross.addEventListener('click', function (e) {
-//   answer = e.target.id
-//   checkAnswerFriends()
-// })
-
-// monica.addEventListener('click', function (e) {
-//   answer = e.target.id
-//   checkAnswerFriends()
-// })
-
-// joey.addEventListener('click', function (e) {
-//   answer = e.target.id
-//   checkAnswerFriends()
-// })
-
 // // named functions
 function initialStateFriends() {
   b2.style.display = 'flex'
+  p.innerText = ""
+  score = 0
+  s.innerText = score
+  d.innerText = "See if you can beat the high score. Press start now!"
   phoebe.setAttribute('src', "")
   chandler.setAttribute('src', "")
   rachel.setAttribute('src', "")
@@ -229,7 +202,7 @@ function initialStateFriends() {
 
 function getStartedFriends() {
   b2.style.display = 'none'
-  // d.innerText = ""
+  d.innerText = ""
   phoebe.setAttribute('src', phoebeUrl)
   chandler.setAttribute('src', chandlerUrl)
   rachel.setAttribute('src', rachelUrl)
@@ -262,10 +235,7 @@ function checkAnswerFriends() {
     s.innerText = score
   } else {
     alert("Better luck next time!")
-    p.innerText = ""
     initialStateFriends()
-    score = 0
-    s.innerText = score
   }
 }
 
