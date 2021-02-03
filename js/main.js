@@ -5,6 +5,7 @@ let georgeUrl = 'https://pbs.twimg.com/profile_images/2183616592/george-costanza
 let kramerUrl = 'https://i.pinimg.com/originals/ac/60/98/ac609817e640c5ad582f0baf35d1634c.jpg'
 let seinfeldUrl = 'https://seinfeld-quotes.herokuapp.com/random'
 let logoUrl = 'https://cdn.freebiesupply.com/logos/large/2x/seinfeld-logo-png-transparent.png'
+let friendsLogoUrl = 'https://hipfonts.com/wp-content/uploads/2020/07/friends-logo-font.png'
 let gifUrl = "https://api.giphy.com/v1/gifs/random?api_key=GY4FWR18NjpgkpcFzW3UXE16pMCKneaL&tag=seinfeld&rating=g"
 let answer = ""
 let score = 0
@@ -156,13 +157,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   checkbox.addEventListener('change', function () {
     if (checkbox.checked) {
-      // body.style.backgroundImage = "url('https://i.pinimg.com/originals/ca/41/93/ca419365d8f738b1bf58b97ff6df39a1.jpg')"
       body.style.backgroundColor = 'rgb(249 249 250'
-      logo.setAttribute('src', 'https://hipfonts.com/wp-content/uploads/2020/07/friends-logo-font.png')
-      // logo.style.display = 'none'
-      // scorebox.style.color = 'white'
-      // scorebox.style.border = '1px solid white'
-      // highscorebox.style.color = 'white'
+      logo.setAttribute('src', friendsLogoUrl)
       scorebox.style.marginTop = '25px'
       highscorebox.style.marginTop = '25px'
       // highscorebox.style.border = '1px solid white'
