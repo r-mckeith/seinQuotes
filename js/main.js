@@ -30,9 +30,6 @@ let b2 = document.getElementById('start2')
 let footer = document.getElementById('footer')
 let gif = document.getElementById('gif')
 
-// I don't know if I need this
-// b.style.display = 'flex'
-
 // event listeners
 b.addEventListener('click', (e) => {
   e.preventDefault()
@@ -75,7 +72,7 @@ function getQuote() {
     })
     .then(function (data) {
       quotes = data
-      checkQuote(quotes.author, quotes.quote)
+      filterQuote(quotes.author, quotes.quote)
     })
     .catch((error) => {
       console.error("ERROR ".error)
@@ -83,7 +80,7 @@ function getQuote() {
     })
 }
 
-function checkQuote(author, quote) {
+function filterQuote(author, quote) {
   if (author === "Jerry" || author === "Elaine" || author === "George" || author === "Kramer") {
     p.innerText = quote
     console.log(author)
