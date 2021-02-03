@@ -30,32 +30,23 @@ let b2 = document.getElementById('start2')
 let footer = document.getElementById('footer')
 let gif = document.getElementById('gif')
 
+// I don't know if I need this
+// b.style.display = 'flex'
+
 // event listeners
-b.style.display = 'flex'
 b.addEventListener('click', (e) => {
   e.preventDefault()
   getStarted()
 })
 
-jerry.addEventListener('click', function (e) {
-  answer = e.target.id
-  checkAnswer()
-})
+const seinfeldGang = [jerry, elaine, george, kramer]
 
-elaine.addEventListener('click', function (e) {
-  answer = e.target.id
-  checkAnswer()
-})
-
-george.addEventListener('click', function (e) {
-  answer = e.target.id
-  checkAnswer()
-})
-
-kramer.addEventListener('click', function (e) {
-  answer = e.target.id
-  checkAnswer()
-})
+for (let i = 0; i < seinfeldGang.length; i++) {
+  seinfeldGang[i].addEventListener('click', function (e) {
+    answer = e.target.id
+    checkAnswer()
+  })
+}
 
 // named functions
 function initialState() {
@@ -76,22 +67,6 @@ function getStarted() {
   kramer.setAttribute('src', kramerUrl)
   getQuote()
 }
-
-// function getQuote() {
-//   fetch(seinfeldUrl)
-//     .then(function (data) {
-//       return data.json()
-//     })
-//     .then(function (data) {
-//       quotes = data
-//       console.log(quotes.author)
-//       p.innerText = quotes.quote
-//     })
-//     .catch((error) => {
-//       console.error("ERROR ".error)
-//       return quotes.author
-//     })
-// }
 
 function getQuote() {
   fetch(seinfeldUrl)
@@ -161,15 +136,10 @@ document.addEventListener('DOMContentLoaded', function () {
       logo.setAttribute('src', friendsLogoUrl)
       scorebox.style.marginTop = '25px'
       highscorebox.style.marginTop = '25px'
-      // highscorebox.style.border = '1px solid white'
-      
       highscoreh2.innerText = "Lindsey: 27"
-      // p.style.color = "white"
       p.innerText=""
       d.innerText = ""
       b.style.display = 'none'
-      // footer.style.color = 'white'
-      // footer.style.borderTop = '3px solid white'
       jerry.setAttribute('src', "")
       elaine.setAttribute('src', "")
       george.setAttribute('src', "")
@@ -178,22 +148,11 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       b.style.display = 'flex'
       b2.style.display = 'none'
-      // body.style.backgroundImage = ""
       body.style.backgroundColor = "rgb(49, 115, 193)"
       logo.setAttribute('src', logoUrl)
-      // logo.style.display = 'flex'
       highscoreh2.innerText = "Ryan: 50"
       p.innerText = ""
       d.innerText = "See if you can beat the high score. Press start now!"
-      // d.style.color = 'black'
-      // scorebox.style.color = 'black'
-      // scorebox.style.border = '1px solid black'
-      // scorebox.style.borderRadius = '25px'
-      // highscorebox.style.color = 'black'
-      // highscorebox.style.border = '1px solid black'
-      // highscorebox.style.borderRadius = '25px'
-      // footer.style.color = 'black'
-      // footer.style.borderTop = '3px solid black'
       phoebe.setAttribute('src', "")
       chandler.setAttribute('src', "")
       rachel.setAttribute('src', "")
