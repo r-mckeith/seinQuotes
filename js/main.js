@@ -23,6 +23,7 @@ let highscorebox = document.getElementById('highscore')
 let highscoreh2 = document.getElementById('highscoreh2')
 let logo = document.getElementById('logo')
 let b2 = document.getElementById('start2')
+let footer = document.getElementById('footer')
 
 // event listeners
 b.style.display = 'flex'
@@ -90,7 +91,7 @@ function getQuote() {
 function checkAnswer() {
   if (answer === quotes.author.toLowerCase()) {
     getQuote()
-    score ++
+    score++
     s.innerText = score
   } else {
     alert("Better luck next time!")
@@ -102,38 +103,9 @@ function checkAnswer() {
   }
 }
 
-
-// darkmode 
-// document.addEventListener('DOMContentLoaded', function () {
-//   var checkbox = document.querySelector('input[type="checkbox"]')
-
-//   checkbox.addEventListener('change', function () {
-//     if (checkbox.checked) {
-//       body.style.backgroundColor = "black"
-//       scorebox.style.color = 'white'
-//       scorebox.style.border = '1px solid white'
-//       highscorebox.style.color = 'white'
-//       highscorebox.style.border = '1px solid white'
-//       p.style.color = "white"
-//       d.style.color = "white"
-//     } else {
-//       body.style.backgroundColor = "rgb(49, 115, 193)"
-//       body.style.backgroundImage = "url('')"
-//       phoebe.setAttribute('src', "")
-//       chandler.setAttribute('src', "")
-//       rachel.setAttribute('src', "")
-//       ross.setAttribute('src', "")
-//       monica.setAttribute('src', "")
-//       joey.setAttribute('src', "")
-//       p.style.color = "black"
-//       d.style.color = "black"
-//     }
-//   })
-// })
-
 // friends mode
 document.addEventListener('DOMContentLoaded', function () {
-  var checkbox = document.getElementById('toggleswitch')
+  var checkbox = document.querySelector('input[type="checkbox"]')
 
   checkbox.addEventListener('change', function () {
     if (checkbox.checked) {
@@ -150,6 +122,8 @@ document.addEventListener('DOMContentLoaded', function () {
       p.style.color = "white"
       d.style.color = "white"
       b.style.display = 'none'
+      footer.style.color = 'white'
+      footer.style.borderTop = '3px solid white'
       jerry.setAttribute('src', "")
       elaine.setAttribute('src', "")
       george.setAttribute('src', "")
@@ -159,10 +133,18 @@ document.addEventListener('DOMContentLoaded', function () {
       b.style.display = 'flex'
       b2.style.display = 'none'
       body.style.backgroundImage = ""
-      document.querySelector('body').style.backgroundColor = "rgb(49, 115, 193)"
+      body.style.backgroundColor = "rgb(49, 115, 193)"
       logo.style.display = 'flex'
+      highscoreh2.innerText = "Ryan: 50"
       p.innerText = ""
       d.innerText = "See if you can beat the high score. Press start now!"
+      d.style.color = 'black'
+      scorebox.style.color = 'black'
+      scorebox.style.border = '1px solid black'
+      highscorebox.style.color = 'black'
+      highscorebox.style.border = '1px solid black'
+      footer.style.color = 'black'
+      footer.style.borderTop = '3px solid black'
       phoebe.setAttribute('src', "")
       chandler.setAttribute('src', "")
       rachel.setAttribute('src', "")
@@ -172,9 +154,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 })
-
-
-
 
 // // global variables
 let phoebeUrl = 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/lisa-kudrow-friends-phoebe-buffay-1546435984.jpg?crop=1xw:0.8166666666666667xh;center,top&resize=480:*'
@@ -269,20 +248,48 @@ function getQuoteFriends() {
 }
 
 function checkAnswerFriends() {
-    if (answer === quotes.character.toLowerCase()) {
-      getQuoteFriends()
-      score ++
-      s.innerText = score
-    } else {
-      alert("Better luck next time!")
-      p.innerText = ""
-      initialStateFriends()
-      score = 0
-      s.innerText = score
-    }
+  if (answer === quotes.character.toLowerCase()) {
+    getQuoteFriends()
+    score++
+    s.innerText = score
+  } else {
+    alert("Better luck next time!")
+    p.innerText = ""
+    initialStateFriends()
+    score = 0
+    s.innerText = score
   }
-  
-  
+}
+
+// darkmode 
+// document.addEventListener('DOMContentLoaded', function () {
+//   var checkbox = document.querySelector('input[type="checkbox"]')
+
+//   checkbox.addEventListener('change', function () {
+//     if (checkbox.checked) {
+//       body.style.backgroundColor = "black"
+//       scorebox.style.color = 'white'
+//       scorebox.style.border = '1px solid white'
+//       highscorebox.style.color = 'white'
+//       highscorebox.style.border = '1px solid white'
+//       p.style.color = "white"
+//       d.style.color = "white"
+//     } else {
+//       body.style.backgroundColor = "rgb(49, 115, 193)"
+//       body.style.backgroundImage = "url('')"
+//       phoebe.setAttribute('src', "")
+//       chandler.setAttribute('src', "")
+//       rachel.setAttribute('src', "")
+//       ross.setAttribute('src', "")
+//       monica.setAttribute('src', "")
+//       joey.setAttribute('src', "")
+//       p.style.color = "black"
+//       d.style.color = "black"
+//     }
+//   })
+// })
+
+
 
 
 
