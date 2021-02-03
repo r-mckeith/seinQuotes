@@ -48,8 +48,8 @@ function initialState() {
   p.innerText = ""
   score = 0
   s.innerText = score
-  b.style.display = 'flex'
-  d.innerText = "See if you can beat the high score. Press start now!"
+  // b.style.display = 'flex'
+  // d.innerText = "See if you can beat the high score. Press start now!"
   buttons.style.display = 'none'
 }
 
@@ -90,9 +90,9 @@ function checkAnswer() {
     score++
     s.innerText = score
   } else {
-    // getGif()
-    alert("Better luck next time!")
+    getGif()
     initialState()
+    // alert("Better luck next time!")
   }
 }
 
@@ -224,6 +224,8 @@ document.addEventListener('DOMContentLoaded', function () {
       scorebox.style.border = '1px solid white'
       highscorebox.style.color = 'white'
       highscorebox.style.border = '1px solid white'
+      footer.style.color = 'white'
+      footer.style.borderTop = '3px solid white'
       p.style.color = "white"
       d.style.color = "white"
     } else {
@@ -232,6 +234,8 @@ document.addEventListener('DOMContentLoaded', function () {
       scorebox.style.border = '1px solid black'
       highscorebox.style.color = 'black'
       highscorebox.style.border = '1px solid black'
+      footer.style.color = 'black'
+      footer.style.borderTop = '3px solid black'
       p.style.color = "black"
       d.style.color = "black"
     }

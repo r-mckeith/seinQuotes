@@ -105,6 +105,7 @@ p {
 #gif-container {
   display: flex;
   justify-content: center;
+  margin-top: 150px;
 }
 
 #phoebe, #chandler, #rachel, #ross, #monica, #joey {
@@ -120,10 +121,9 @@ p {
   flex-direction: row;
   align-items: center;
   text-align:right;
-  margin: 0px 10px 15px 0px;
-  border-top: 3px solid;
-  border-color: black;
-  font-size: 15px;
+  margin: 0px 30px 15px 0px;
+  border-top: 3px solid black;
+  font-size: 20px;
   color: black;
   height: 50px;
 }
