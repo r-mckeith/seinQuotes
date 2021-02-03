@@ -36,7 +36,7 @@ b.addEventListener('click', (e) => {
   getStarted()
 })
 
-const seinfeldGang = [jerry, elaine, george, kramer]
+let seinfeldGang = [jerry, elaine, george, kramer]
 
 for (let i = 0; i < seinfeldGang.length; i++) {
   seinfeldGang[i].addEventListener('click', function (e) {
@@ -48,6 +48,9 @@ for (let i = 0; i < seinfeldGang.length; i++) {
 // named functions
 function initialState() {
   p.innerText = ""
+  score = 0
+  s.innerText = score
+  b.style.display = 'flex'
   d.innerText = "See if you can beat the high score. Press start now!"
   jerry.setAttribute('src', "")
   elaine.setAttribute('src', "")
@@ -84,9 +87,7 @@ function filterQuote(author, quote) {
   if (author === "Jerry" || author === "Elaine" || author === "George" || author === "Kramer") {
     p.innerText = quote
     console.log(author)
-    // checkAnswer()
   } else {
-    console.log("Too many authors")
     getQuote()
   }
 }
@@ -100,10 +101,6 @@ function checkAnswer() {
     // getGif()
     alert("Better luck next time!")
     initialState()
-    b.style.display = 'flex'
-    score = 0
-    s.innerText = score
-    p.innerText = ""
   }
 }
 
@@ -123,7 +120,7 @@ function checkAnswer() {
 //       })
 //   }
 
-// friends mode
+// friends mode 
 document.addEventListener('DOMContentLoaded', function () {
   var checkbox = document.querySelector('input[type="checkbox"]')
 
@@ -183,35 +180,41 @@ b2.addEventListener('click', (e) => {
   getStartedFriends()
 })
 
-phoebe.addEventListener('click', function (e) {
-  answer = e.target.id
-  checkAnswerFriends()
-})
+let friendsGang = [phoebe, chandler, rachel, ross, monica, joey]
 
-chandler.addEventListener('click', function (e) {
-  answer = e.target.id
-  checkAnswerFriends()
-})
+for (let i=0; i < friendsGang.length; i++) {
+  friendsGang[i].addEventListener('click', function (e) {
+    answer = e.target.id
+    checkAnswerFriends()
+  })
+}
 
-rachel.addEventListener('click', function (e) {
-  answer = e.target.id
-  checkAnswerFriends()
-})
+// phoebe
 
-ross.addEventListener('click', function (e) {
-  answer = e.target.id
-  checkAnswerFriends()
-})
+// chandler.addEventListener('click', function (e) {
+//   answer = e.target.id
+//   checkAnswerFriends()
+// })
 
-monica.addEventListener('click', function (e) {
-  answer = e.target.id
-  checkAnswerFriends()
-})
+// rachel.addEventListener('click', function (e) {
+//   answer = e.target.id
+//   checkAnswerFriends()
+// })
 
-joey.addEventListener('click', function (e) {
-  answer = e.target.id
-  checkAnswerFriends()
-})
+// ross.addEventListener('click', function (e) {
+//   answer = e.target.id
+//   checkAnswerFriends()
+// })
+
+// monica.addEventListener('click', function (e) {
+//   answer = e.target.id
+//   checkAnswerFriends()
+// })
+
+// joey.addEventListener('click', function (e) {
+//   answer = e.target.id
+//   checkAnswerFriends()
+// })
 
 // // named functions
 function initialStateFriends() {
