@@ -198,7 +198,6 @@ function getQuoteFriends() {
     })
     .then(function (data) {
       quotes = data
-      console.log(quotes.character)
       p.innerText = quotes.quote
     })
     .catch((error) => {
