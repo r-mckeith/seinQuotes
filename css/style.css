@@ -120,6 +120,11 @@ p {
   margin-top: 150px;
 }
 
+#gif {
+  height: 280px;
+  display: none;
+}
+
 #phoebe, #chandler, #rachel, #ross, #monica, #joey {
   padding: 20px;
   margin: 50px 12px 0px 12px;;

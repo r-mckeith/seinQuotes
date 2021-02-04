@@ -86,7 +86,6 @@ function getQuote() {
 function filterQuote(author, quote) {
   if (author === "Jerry" || author === "Elaine" || author === "George" || author === "Kramer") {
     p.innerText = quote
-    console.log(author)
   } else {
     getQuote()
   }
@@ -100,7 +99,6 @@ function checkAnswer() {
   } else {
     getGif()
     initialState()
-    // alert("Better luck next time!")
   }
 }
 
@@ -113,7 +111,6 @@ function getGif() {
         giphy = data
         gif.style.display = 'flex'
         gif.setAttribute('src', giphy.data.fixed_height_downsampled_url)
-        console.log(giphy.data)
       })
       .catch((error) => {
         console.error("ERROR ".error)
