@@ -74,7 +74,6 @@ function getQuote() {
     })
     .then(function (data) {
       quotes = data
-      console.log(quotes.quote)
       filterQuote(quotes.author, quotes.quote)
     })
     .catch((error) => {

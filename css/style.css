@@ -8,20 +8,17 @@ body {
     margin: 0;
     font-family: 'Inconsolata', monospace;
     background-color: rgb(49, 115, 193);
-    /* for friends mode */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
 }
 
 #main-content {
   min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
 }
 
 #header {
   display: flex; 
   flex-direction: row;
-  /* align-items: center; */
   justify-content: space-between;
 }
 
@@ -36,23 +33,23 @@ body {
   margin-top: 25px;
 }
 
-#highscore {
+#highscore, #score {
   margin: 0px 20px 60px auto;
   padding: 0px 20px 0px 20px;
   border: 1px solid black;
   border-radius: 25px;
 }
 
-#score {
+/* #score {
   margin: 0px 20px 60px auto;
   padding: 0px 20px 0px 20px;
   border: 1px solid black;
   border-radius: 25px;
-}
+} */
 
 #directions {
   font-size: 35px;
-  margin-top: 150px;
+  margin-top: 100px;
   text-align: center;
 }
 
@@ -83,10 +80,10 @@ body {
   justify-content: center;
 }
 
-p {
-  font-size: 35px;
-  margin-top: 250px; 
-}
+/* p {
+  font-size: 30px;
+  margin-top: 150px; 
+} */
 
 #quote-container {
   display: flex;
@@ -95,9 +92,10 @@ p {
 }
 
 #quote {
+  font-size: 30px;
   text-align: justify;
-  margin-top: 350 px;
-  margin: 00px 100px 0px 100px;
+  /* margin-top: 150px; */
+  margin: 0px 100px 0px 100px;
 }
 
 .buttons, .buttons-friends {
@@ -106,7 +104,7 @@ p {
   justify-content: center;
 }
 
-#jerry, #elaine, #george, #kramer {
+.buttons-seinfeld {
   padding: 20px;
   margin: 50px 12px 0px 12px;;
   height: 150px;
@@ -125,7 +123,7 @@ p {
   display: none;
 }
 
-#phoebe, #chandler, #rachel, #ross, #monica, #joey {
+.btn-friends {
   padding: 20px;
   margin: 50px 12px 0px 12px;;
   height: 125px;
@@ -138,8 +136,8 @@ p {
   flex-direction: row;
   align-items: center;
   text-align:right;
-  margin: 0px 30px 15px 0px;
-  border-top: 3px solid black;
+  margin-bottom: 15px;
+  border-top: 1px solid black;
   font-size: 20px;
   color: black;
   height: 50px;
@@ -147,12 +145,61 @@ p {
 
 a{
   color: black;
-  /* text-decoration: none; */
 }
 
-#toggle, #toggle2 {
+#toggle {
   margin: 70px auto 60px 20px;
 }
+
+@media only screen and (max-width: 600px) {
+    #header {
+      display: flex; 
+      flex-direction: column;
+      /* align-items: center; */
+      /* justify-content: space-between; */
+    }
+    p {
+      font-size: 30px;
+      margin-top: -250px; 
+    }
+    .buttons-seinfeld {
+      padding: 20px;
+      margin: 50px 0px 0px 0px;;
+      height: 100px;
+      width: auto;
+      border-radius: 50%;
+    }
+    .btn-friends {
+      padding: 20px;
+      margin: 50px 0px 0px 0px;;
+      height: 80px;
+      width: auto;
+      border-radius: 50%;
+    }
+    #footer {
+      font-size: 11px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* The switch - the box around the slider */
 .switch {
