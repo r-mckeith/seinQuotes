@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
   <script defer src="js/main.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
   <div id="main-content">
     <header id="header">
@@ -24,16 +22,13 @@
         </div>
       </div>
     </header>
-
     <div id="gif-container">
       <img id="gif" src="https://api.giphy.com/v1/gifs/random?api_key=GY4FWR18NjpgkpcFzW3UXE16pMCKneaL&tag=seinfeld&rating=g" alt="Seinfeld gif"/>
     </div>
-
     <div id="directions">
       <span>See if you can beat the high score.</span>
       <span>Press start now!</span>  
     </div>
-
     <div id="start-button">
       <button id="start">START</button>
     </div>
@@ -43,18 +38,15 @@
     <div id="try-again-button">
       <button id="try-again">TRY AGAIN</button>
     </div>
-
     <div id="quote-container">
       <p id="quote"></p>
     </div>
-
     <div class="buttons">
       <img id="jerry" class="buttons-seinfeld" src='https://img.discogs.com/IT2ANZAn8zJIhQ_pV8qTyElA9zc=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-558436-1478198229-3737.jpeg.jpg' alt="Jerry Seinfeld">
       <img id="elaine" class="buttons-seinfeld" src='https://3.bp.blogspot.com/_JI1Ciz-JrcA/TS_JOAoyLmI/AAAAAAAAAFU/Uw74X-pIQGk/s1600/elaine.png' alt="Elaine Benes">
       <img id="george" class="buttons-seinfeld" src='https://pbs.twimg.com/profile_images/2183616592/george-costanza1_400x400.jpg' alt="George Costanza">
       <img id="kramer" class="buttons-seinfeld" src='https://i.pinimg.com/originals/ac/60/98/ac609817e640c5ad582f0baf35d1634c.jpg' alt="Cosmo Kramer">
     </div>
-
     <div class="buttons-friends">
       <img id="phoebe" class="btn-friends" src='https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/lisa-kudrow-friends-phoebe-buffay-1546435984.jpg?crop=1xw:0.8166666666666667xh;center,top&resize=480:*' alt="Phoebe">
       <img id="chandler" class="btn-friends" src='https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters_opt/p-friends-matthew-perry.jpg' alt="Chandler">
@@ -64,17 +56,16 @@
       <img id="joey" class="btn-friends" src='https://upload.wikimedia.org/wikipedia/en/d/da/Matt_LeBlanc_as_Joey_Tribbiani.jpg' alt="Joey">
     </div>
   </div>
-
   <footer id="footer">
+    <!-- The following code was taken from https://www.w3schools.com/howto/howto_css_switch.asp -->
     <div id="toggle">
       <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
       </label>
     </div>
+    <!-- end -->
     <span>seinQuotes was made using the <a href="https://seinfeld-quotes.herokuapp.com/">Seinfeld Quotes API</a>. Please play responsibly.</span>
   </footer>
-
 </body>
-
 </html>
