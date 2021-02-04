@@ -52,7 +52,7 @@ body {
 
 #directions {
   font-size: 35px;
-  margin-top: 300px;
+  margin-top: 150px;
   text-align: center;
 }
 
@@ -69,6 +69,18 @@ body {
 
 #start2 {
   display: none;
+}
+
+#try-again-button {
+  display: flex;
+  justify-content: center;
+}
+
+#try-again {
+  display: none;
+  padding: 20px;
+  margin: 0px 15px 0px 15px;;
+  justify-content: center;
 }
 
 p {

@@ -27,9 +27,15 @@ let footer = document.getElementById('footer')
 let gif = document.getElementById('gif')
 let buttons = document.querySelector('.buttons')
 let buttonsf = document.querySelector('.buttons-friends')
+let tryAgain = document.getElementById('try-again')
 
 // event listeners
 b.addEventListener('click', (e) => {
+  e.preventDefault()
+  getStarted()
+})
+
+tryAgain.addEventListener('click', (e) => {
   e.preventDefault()
   getStarted()
 })
@@ -48,15 +54,17 @@ function initialState() {
   p.innerText = ""
   score = 0
   s.innerText = score
-  // b.style.display = 'flex'
+  tryAgain.style.display = 'flex'
   // d.innerText = "See if you can beat the high score. Press start now!"
   buttons.style.display = 'none'
 }
 
 function getStarted() {
   b.style.display = 'none'
+  tryAgain.style.display = 'none'
   d.innerText = ""
   buttons.style.display = 'flex'
+  gif.style.display = 'none'
   getQuote()
 }
 
@@ -103,7 +111,8 @@ function getGif() {
       })
       .then(function (data) {
         giphy = data
-        gif.setAttribute('src', giphy.data.image_url)
+        gif.style.display = 'flex'
+        gif.setAttribute('src', giphy.data.fixed_height_downsampled_url)
         console.log(giphy.data)
       })
       .catch((error) => {
