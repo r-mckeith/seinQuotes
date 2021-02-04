@@ -134,6 +134,8 @@ document.addEventListener('DOMContentLoaded', function () {
       d.innerText = ""
       b.style.display = 'none'
       buttons.style.display = 'none'
+      gif.style.display = 'none'
+      tryAgain.style.display = 'none'
       getStartedFriends()
     } else {
       b.style.display = 'flex'
