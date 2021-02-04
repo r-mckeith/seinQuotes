@@ -55,7 +55,6 @@ function initialState() {
   score = 0
   s.innerText = score
   tryAgain.style.display = 'flex'
-  // d.innerText = "See if you can beat the high score. Press start now!"
   buttons.style.display = 'none'
 }
 
@@ -127,8 +126,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (checkbox.checked) {
       body.style.backgroundColor = 'rgb(255 255 255)'
       logo.setAttribute('src', friendsLogoUrl)
-      // scorebox.style.marginTop = '25px'
-      // highscorebox.style.marginTop = '25px'
       highscoreh2.innerText = "Lindsey: 27"
       p.innerText=""
       d.innerText = ""
@@ -149,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
       d.innerText = "See if you can beat the high score. Press start now!"
       buttonsf.style.display = 'none'
     }
-  })
+  }) 
 })
 
 // // global variables
