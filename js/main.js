@@ -1,33 +1,33 @@
 // global variables
-let seinfeldUrl = 'https://seinfeld-quotes.herokuapp.com/random'
-let logoUrl = 'https://cdn.freebiesupply.com/logos/large/2x/seinfeld-logo-png-transparent.png'
-let friendsLogoUrl = 'https://cdn.shopify.com/s/files/1/0333/0480/5511/products/Friends-05_1476x.jpg?v=1588975211'
-let gifUrl = "https://api.giphy.com/v1/gifs/random?api_key=GY4FWR18NjpgkpcFzW3UXE16pMCKneaL&tag=seinfeld&rating=g"
+const seinfeldUrl = 'https://seinfeld-quotes.herokuapp.com/random'
+const logoUrl = 'https://cdn.freebiesupply.com/logos/large/2x/seinfeld-logo-png-transparent.png'
+const friendsLogoUrl = 'https://cdn.shopify.com/s/files/1/0333/0480/5511/products/Friends-05_1476x.jpg?v=1588975211'
+const gifUrl = "https://api.giphy.com/v1/gifs/random?api_key=GY4FWR18NjpgkpcFzW3UXE16pMCKneaL&tag=seinfeld&rating=g"
 let answer = ""
 let score = 0
 let highscore = 5
 
 // element selection
-let b = document.getElementById('start')
-let jerry = document.getElementById('jerry')
-let elaine = document.getElementById('elaine')
-let george = document.getElementById('george')
-let kramer = document.getElementById('kramer')
-let p = document.getElementById('quote')
-let d = document.getElementById('directions')
-let s = document.getElementById('current-score')
-let body = document.querySelector('body')
-let scorebox = document.getElementById('score')
-let highscorebox = document.getElementById('highscore')
-let highscoreh2 = document.getElementById('highscoreh2')
-let scores = document.getElementById('scores')
-let logo = document.getElementById('logo')
-let b2 = document.getElementById('start2')
-let footer = document.getElementById('footer')
-let gif = document.getElementById('gif')
-let buttons = document.querySelector('.buttons')
-let buttonsf = document.querySelector('.buttons-friends')
-let tryAgain = document.getElementById('try-again')
+const b = document.getElementById('start')
+const jerry = document.getElementById('jerry')
+const elaine = document.getElementById('elaine')
+const george = document.getElementById('george')
+const kramer = document.getElementById('kramer')
+const p = document.getElementById('quote')
+const d = document.getElementById('directions')
+const s = document.getElementById('current-score')
+const body = document.querySelector('body')
+const scorebox = document.getElementById('score')
+const highscorebox = document.getElementById('highscore')
+const highscoreh2 = document.getElementById('highscoreh2')
+const scores = document.getElementById('scores')
+const logo = document.getElementById('logo')
+const b2 = document.getElementById('start2')
+const footer = document.getElementById('footer')
+const gif = document.getElementById('gif')
+const buttons = document.querySelector('.buttons')
+const buttonsf = document.querySelector('.buttons-friends')
+const tryAgain = document.getElementById('try-again')
 
 // event listeners
 b.addEventListener('click', (e) => {
