@@ -123,6 +123,8 @@ logo.addEventListener('click', function () {
   body.style.backgroundColor = 'rgb(255 255 255)'
   logo.setAttribute('src', friendsLogoUrl)
   highscoreh2.innerText = "Lindsey: 27"
+  score = 0
+  s.innerText = score
   p.innerText=""
   d.innerText = ""
   b.style.display = 'none'
