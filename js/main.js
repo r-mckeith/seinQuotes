@@ -28,6 +28,7 @@ const gif = document.getElementById('gif')
 const buttons = document.querySelector('.buttons')
 const buttonsf = document.querySelector('.buttons-friends')
 const tryAgain = document.getElementById('try-again')
+const a = document.querySelector('a')
 
 // event listeners
 b.addEventListener('click', (e) => {
@@ -102,50 +103,48 @@ function checkAnswer() {
 }
 
 function getGif() {
-    fetch(gifUrl) 
-      .then(function (data) {
-        return data.json()
-      })
-      .then(function (data) {
-        giphy = data
-        gif.style.display = 'flex'
-        gif.setAttribute('src', giphy.data.fixed_height_downsampled_url)
-      })
-      .catch((error) => {
-        console.error("ERROR ".error)
-        return quotes.author
-      })
-  }
+  fetch(gifUrl) 
+    .then(function (data) {
+      return data.json()
+    })
+    .then(function (data) {
+      giphy = data
+      gif.style.display = 'flex'
+      gif.setAttribute('src', giphy.data.fixed_height_downsampled_url)
+    })
+    .catch((error) => {
+      console.error("ERROR ".error)
+      return quotes.author
+    })
+}
 
 // friends mode 
-document.addEventListener('DOMContentLoaded', function () {
-  var checkbox = document.querySelector('input[type="checkbox"]')
+logo.addEventListener('click', function () {
+  body.style.backgroundColor = 'rgb(255 255 255)'
+  logo.setAttribute('src', friendsLogoUrl)
+  highscoreh2.innerText = "Lindsey: 27"
+  p.innerText=""
+  d.innerText = ""
+  b.style.display = 'none'
+  buttons.style.display = 'none'
+  gif.style.display = 'none'
+  tryAgain.style.display = 'none'
+  d.style.color = 'black'
+  p.style.color = 'black'
+  getStartedFriends()
+})
 
-  checkbox.addEventListener('change', function () {
-    if (checkbox.checked) {
-      body.style.backgroundColor = 'rgb(255 255 255)'
-      logo.setAttribute('src', friendsLogoUrl)
-      highscoreh2.innerText = "Lindsey: 27"
-      p.innerText=""
-      d.innerText = ""
-      b.style.display = 'none'
-      buttons.style.display = 'none'
-      gif.style.display = 'none'
-      tryAgain.style.display = 'none'
-      getStartedFriends()
-    } else {
-      b.style.display = 'flex'
-      b2.style.display = 'none'
-      body.style.backgroundColor = "rgb(49, 115, 193)"
-      logo.setAttribute('src', logoUrl)
-      highscoreh2.innerText = "Ryan: 50"
-      score = 0
-      s.innerText = score
-      p.innerText = ""
-      d.innerText = "See if you can beat the high score. Press start now!"
-      buttonsf.style.display = 'none'
-    }
-  }) 
+highscorebox.addEventListener('click', function () { 
+  b.style.display = 'flex'
+  b2.style.display = 'none'
+  body.style.backgroundColor = "rgb(49, 115, 193)"
+  logo.setAttribute('src', logoUrl)
+  highscoreh2.innerText = "Ryan: 50"
+  score = 0
+  s.innerText = score
+  p.innerText = ""
+  d.innerText = "See if you can beat the high score. Press start now!"
+  buttonsf.style.display = 'none'
 })
 
 // // global variables
@@ -218,33 +217,36 @@ function checkAnswerFriends() {
 }
 
 // darkmode 
-// document.addEventListener('DOMContentLoaded', function () {
-//   var checkbox = document.querySelector('input[type="checkbox"]')
+document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('input[type="checkbox"]')
 
-//   checkbox.addEventListener('change', function () {
-//     if (checkbox.checked) {
-//       body.style.backgroundColor = "black"
-//       scorebox.style.color = 'white'
-//       scorebox.style.border = '1px solid white'
-//       highscorebox.style.color = 'white'
-//       highscorebox.style.border = '1px solid white'
-//       footer.style.color = 'white'
-//       footer.style.borderTop = '3px solid white'
-//       p.style.color = "white"
-//       d.style.color = "white"
-//     } else {
-//       body.style.backgroundColor = "rgb(49, 115, 193)"
-//       scorebox.style.color = 'black'
-//       scorebox.style.border = '1px solid black'
-//       highscorebox.style.color = 'black'
-//       highscorebox.style.border = '1px solid black'
-//       footer.style.color = 'black'
-//       footer.style.borderTop = '3px solid black'
-//       p.style.color = "black"
-//       d.style.color = "black"
-//     }
-//   })
-// })
+  checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+      body.style.backgroundColor = "black"
+      scorebox.style.color = 'white'
+      scorebox.style.border = '1px solid white'
+      highscorebox.style.color = 'white'
+      highscorebox.style.border = '1px solid white'
+      footer.style.color = 'white'
+      footer.style.borderTop = '3px solid white'
+      p.style.color = "white"
+      d.style.color = "white"
+      a.style.color = 'white'
+    } else {
+      body.style.backgroundColor = "rgb(49, 115, 193)"
+      logo.setAttribute('src', logoUrl)
+      scorebox.style.color = 'black'
+      scorebox.style.border = '1px solid black'
+      highscorebox.style.color = 'black'
+      highscorebox.style.border = '1px solid black'
+      footer.style.color = 'black'
+      footer.style.borderTop = '3px solid black'
+      p.style.color = "black"
+      d.style.color = "black"
+      a.style.color = 'black'
+    }
+  })
+})
 
 
 
