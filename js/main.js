@@ -121,7 +121,7 @@ function getGif() {
 // friends mode 
 logo.addEventListener('click', function () {
   if (highscoreh2.innerText === "Ryan: 50") {
-    body.style.backgroundColor = 'rgb(255 255 255'
+    body.style.backgroundColor = 'rgb(255 255 255)'
     logo.setAttribute('src', friendsLogoUrl)
     highscoreh2.innerText = "Lindsey: 27"
     score = 0
@@ -143,6 +143,7 @@ logo.addEventListener('click', function () {
     p.style.color = "black"
     d.style.color = "black"
     a.style.color = 'black'
+    a.style.color = 'red'
     getStartedFriends()
   } else {
     b.style.display = 'flex'
@@ -155,12 +156,19 @@ logo.addEventListener('click', function () {
     p.innerText = ""
     d.innerText = "See if you can beat the high score. Press start now!"
     buttonsf.style.display = 'none'
+    d.style.color = 'white'
+    p.style.color = 'white'
+    scorebox.style.color = 'white'
+    scorebox.style.border = '1px solid white'
+    highscorebox.style.color = 'white'
+    highscorebox.style.border = '1px solid white'
+    footer.style.color = 'white'
+    footer.style.borderTop = '3px solid white'
+    p.style.color = "white"
+    d.style.color = "white"
+    a.style.color = 'yellow'
   }
 })
-
-// highscorebox.addEventListener('click', function () { 
-  
-// })
 
 // // global variables
 let friendsUrl = 'https://friends-quotes-api.herokuapp.com/quotes/random'
