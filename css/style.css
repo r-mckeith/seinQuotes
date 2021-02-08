@@ -7,6 +7,7 @@
 body {
     margin: 0;
     font-family: 'Inconsolata', monospace;
+    color: white;
     background-color: rgb(49, 115, 193);
 }
 
@@ -36,7 +37,7 @@ body {
 #highscore, #score {
   margin: 0px 20px 60px auto;
   padding: 0px 20px 0px 20px;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 25px;
 }
 
@@ -82,7 +83,6 @@ body {
 #quote {
   font-size: 30px;
   text-align: justify;
-  /* margin-top: 150px; */
   margin: 0px 100px 0px 100px;
 }
 
@@ -125,14 +125,14 @@ body {
   align-items: center;
   text-align:right;
   margin-bottom: 15px;
-  border-top: 1px solid black;
+  border-top: 1px solid white;
   font-size: 20px;
-  color: black;
   height: 50px;
 }
 
 a{
-  color: black;
+  color: yellow;
+  text-decoration: none;
 }
 
 #toggle, #toggle2 {

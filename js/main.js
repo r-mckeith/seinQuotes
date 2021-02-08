@@ -1,6 +1,6 @@
 // global variables
 const seinfeldUrl = 'https://seinfeld-quotes.herokuapp.com/random'
-const logoUrl = 'https://cdn.freebiesupply.com/logos/large/2x/seinfeld-logo-png-transparent.png'
+const seinfeldLogoUrl = 'https://cdn.freebiesupply.com/logos/large/2x/seinfeld-logo-png-transparent.png'
 const friendsLogoUrl = 'https://cdn.shopify.com/s/files/1/0333/0480/5511/products/Friends-05_1476x.jpg?v=1588975211'
 const gifUrl = "https://api.giphy.com/v1/gifs/random?api_key=GY4FWR18NjpgkpcFzW3UXE16pMCKneaL&tag=seinfeld&rating=g"
 let answer = ""
@@ -120,34 +120,47 @@ function getGif() {
 
 // friends mode 
 logo.addEventListener('click', function () {
-  body.style.backgroundColor = 'rgb(255 255 255)'
-  logo.setAttribute('src', friendsLogoUrl)
-  highscoreh2.innerText = "Lindsey: 27"
-  score = 0
-  s.innerText = score
-  p.innerText=""
-  d.innerText = ""
-  b.style.display = 'none'
-  buttons.style.display = 'none'
-  gif.style.display = 'none'
-  tryAgain.style.display = 'none'
-  d.style.color = 'black'
-  p.style.color = 'black'
-  getStartedFriends()
+  if (highscoreh2.innerText === "Ryan: 50") {
+    body.style.backgroundColor = 'rgb(255 255 255'
+    logo.setAttribute('src', friendsLogoUrl)
+    highscoreh2.innerText = "Lindsey: 27"
+    score = 0
+    s.innerText = score
+    p.innerText=""
+    d.innerText = ""
+    b.style.display = 'none'
+    buttons.style.display = 'none'
+    gif.style.display = 'none'
+    tryAgain.style.display = 'none'
+    d.style.color = 'black'
+    p.style.color = 'black'
+    scorebox.style.color = 'black'
+    scorebox.style.border = '1px solid black'
+    highscorebox.style.color = 'black'
+    highscorebox.style.border = '1px solid black'
+    footer.style.color = 'black'
+    footer.style.borderTop = '3px solid black'
+    p.style.color = "black"
+    d.style.color = "black"
+    a.style.color = 'black'
+    getStartedFriends()
+  } else {
+    b.style.display = 'flex'
+    b2.style.display = 'none'
+    body.style.backgroundColor = "rgb(49, 115, 193)"
+    logo.setAttribute('src', seinfeldLogoUrl)
+    highscoreh2.innerText = "Ryan: 50"
+    score = 0
+    s.innerText = score
+    p.innerText = ""
+    d.innerText = "See if you can beat the high score. Press start now!"
+    buttonsf.style.display = 'none'
+  }
 })
 
-highscorebox.addEventListener('click', function () { 
-  b.style.display = 'flex'
-  b2.style.display = 'none'
-  body.style.backgroundColor = "rgb(49, 115, 193)"
-  logo.setAttribute('src', logoUrl)
-  highscoreh2.innerText = "Ryan: 50"
-  score = 0
-  s.innerText = score
-  p.innerText = ""
-  d.innerText = "See if you can beat the high score. Press start now!"
-  buttonsf.style.display = 'none'
-})
+// highscorebox.addEventListener('click', function () { 
+  
+// })
 
 // // global variables
 let friendsUrl = 'https://friends-quotes-api.herokuapp.com/quotes/random'
@@ -218,37 +231,42 @@ function checkAnswerFriends() {
   }
 }
 
-// darkmode 
-document.addEventListener('DOMContentLoaded', function () {
-  const checkbox = document.querySelector('input[type="checkbox"]')
 
-  checkbox.addEventListener('change', function () {
-    if (checkbox.checked) {
-      body.style.backgroundColor = "black"
-      scorebox.style.color = 'white'
-      scorebox.style.border = '1px solid white'
-      highscorebox.style.color = 'white'
-      highscorebox.style.border = '1px solid white'
-      footer.style.color = 'white'
-      footer.style.borderTop = '3px solid white'
-      p.style.color = "white"
-      d.style.color = "white"
-      a.style.color = 'white'
-    } else {
-      body.style.backgroundColor = "rgb(49, 115, 193)"
-      logo.setAttribute('src', logoUrl)
-      scorebox.style.color = 'black'
-      scorebox.style.border = '1px solid black'
-      highscorebox.style.color = 'black'
-      highscorebox.style.border = '1px solid black'
-      footer.style.color = 'black'
-      footer.style.borderTop = '3px solid black'
-      p.style.color = "black"
-      d.style.color = "black"
-      a.style.color = 'black'
-    }
-  })
-})
+// darkmode 
+// document.addEventListener('DOMContentLoaded', function () {
+//   const checkbox = document.querySelector('input[type="checkbox"]')
+
+//   checkbox.addEventListener('change', function () {
+//     if (checkbox.checked) {
+//       body.style.backgroundColor = "black"
+//       scorebox.style.color = 'white'
+//       scorebox.style.border = '1px solid white'
+//       highscorebox.style.color = 'white'
+//       highscorebox.style.border = '1px solid white'
+//       footer.style.color = 'white'
+//       footer.style.borderTop = '3px solid white'
+//       p.style.color = "white"
+//       d.style.color = "white"
+//       a.style.color = 'white'
+//     } else {
+//       if (highscoreh2.innerText = "Lindsey: 27") {
+//         body.style.backgroundColor = "black"
+//       } else {
+//         body.style.backgroundColor = "rgb(49, 115, 193)"
+//         logo.setAttribute('src', logoUrl)
+        // scorebox.style.color = 'black'
+        // scorebox.style.border = '1px solid black'
+        // highscorebox.style.color = 'black'
+        // highscorebox.style.border = '1px solid black'
+        // footer.style.color = 'black'
+        // footer.style.borderTop = '3px solid black'
+        // p.style.color = "black"
+        // d.style.color = "black"
+        // a.style.color = 'black'
+//       }
+//     }
+//   })
+// })
 
 
 
